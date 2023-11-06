@@ -7,7 +7,7 @@ import { saveDashboardData } from "../../redux/reducers/dashboardReducer/dashboa
 import { useDispatch, useSelector } from "react-redux";
 
 interface HomePageProps {
-  // Define any props your homepage component may accept
+  
 }
 
 const HomePage: React.FC<HomePageProps> = (props) => {
