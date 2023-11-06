@@ -6,18 +6,18 @@ const SequenceAttributes: React.FC = () => {
 
 
   return (
-    <div id="chart" className="w-[55%] flex flex-col bg-white border-2 p-3 rounded-xl gap-3">
+    <div id="chart" className=" flex flex-col bg-white border-2 p-3 rounded-xl gap-3">
        <div className="flex items-center gap-10">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400]">Sequence</p>
           <div className="flex items-center gap-5">
-             <button type="button" className="w-[70px] border-2 rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1">01</button>
+             <input type="text" className="w-[70px] border rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1 text-center" placeholder='01'/>
              <div className="flex items-center gap-2">
                 <p className="text-[19px] font-['calibri' !important] font-[400]">Start Pos.</p>
-                <button type="button" className="w-[70px] border-2 rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1">1</button>
+                <input type="text" className="w-[70px] border rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1 text-center" placeholder='1'/>
              </div>
              <div className="flex items-center gap-2">
                 <p className="text-[19px] font-['calibri' !important] font-[400]">End Pos.</p>
-                <button type="button" className="w-[70px] border-2 rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1">6</button>
+                <input type="text" className="w-[70px] border rounded-md text-[#7f7f7f] font-['calibri' !important]  pt-1 pb-1 text-center" placeholder='1'/>
              </div>
           </div>
        </div>
