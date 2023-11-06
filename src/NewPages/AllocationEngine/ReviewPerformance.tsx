@@ -4,6 +4,11 @@ import Performance from "./performance";
 import PLImpactChart from "./PLImpactChart";
 import SegmentTable from "./SegmentTable";
 import { useEffect, useState } from "react";
+import { HiPlus } from 'react-icons/hi'
+import TestId from "./TestId";
+import Treatment from "./Treatments";
+import SequenceAttributes from "./SequenceAttributes";
+
 
 
 
@@ -11,6 +16,8 @@ import { useEffect, useState } from "react";
 const ReviewPerformance: React.FC = () =>{ 
 
    const [activeBucket, setActiveBucket] = useState("b1");
+   const [showTestIdComp,setShowTestIdComp] = useState(false)
+   const [showSequenceCond,setShowSequenceCond] = useState(false)
 
 
    const BGroups = [
@@ -21,14 +28,19 @@ const ReviewPerformance: React.FC = () =>{
       { id: "b5", label: "B5" },
       { id: "b6", label: "B6" },
     ];
-  
+
+    const tableNumber = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+
+  const showSequence = () =>{
+   setShowSequenceCond(true)
+  }
 
     const handleButtonClick = async (buttonId: string) => {
       setActiveBucket(buttonId);
     };
 
     return(
-      <div className="flex flex-col gap-10 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
+      <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
       <div className="w-[95%] flex items-center justify-between ml-6">
       <div className=" flex justify-between  rounded-xl B1TabsContain">
               {BGroups.map((button, index) => (
@@ -58,12 +70,38 @@ const ReviewPerformance: React.FC = () =>{
             </div>
 
       </div>
+      <div className="flex flex-col">
       <SegmentTable/>
-     <div className=" flex gap-2 ml-4">
+      <div className="w-[95%] flex items-center ml-6">
+         <div className="w-[20%] flex items-center gap-1 border-2 ">
+           <HiPlus className="text-violet-800" size={35}/>
+           <button onClick={()=>setShowTestIdComp(true)} type='button' className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${showTestIdComp && 'bg-violet-300 text-gray-800 font-[500]' }`}>Add/Edit</button>
+         </div>
+         <table className="w-[80%]" cellPadding={5}>
+           <tbody>
+             <tr className="border-2">
+              {tableNumber.map(each=>(
+                <td className="border-2 text-center font-['calibri' !1important] font-[500s]">{each}</td>
+              ))}
+             </tr>
+             
+           </tbody>
+         </table>
+      </div>
+      </div>
+     {!showTestIdComp && <div className=" flex gap-2 ml-4">
         <TestPipeLine/> 
         <Performance/>
         <PLImpactChart/>
-     </div>
+     </div>}
+     {showTestIdComp && <div className="flex gap-6 ml-5">
+      <div className="flex flex-col gap-2">
+       <TestId showSequence={showSequence}/>
+       {showSequenceCond && <SequenceAttributes/>}
+      </div>
+       <Treatment/>
+
+     </div>}
      </div>
     )
     };

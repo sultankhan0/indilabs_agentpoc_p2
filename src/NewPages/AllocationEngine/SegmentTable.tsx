@@ -180,7 +180,7 @@ function SegmentTable({}: Props) {
             
           </tbody>
       </table>
-      <div className="w-[100%] flex items-center">
+      {/* <div className="w-[100%] flex items-center">
          <div className="w-[20%] flex items-center gap-1 border-2 ">
            <HiPlus className="text-violet-800" size={35}/>
            <button type='button' className="w-[90%] p-1 border-2 rounded font-['calibri' !important] font-[400] text-gray-500">Add/Edit</button>
@@ -195,7 +195,7 @@ function SegmentTable({}: Props) {
              
            </tbody>
          </table>
-      </div>
+      </div> */}
       
     </div>
   );
