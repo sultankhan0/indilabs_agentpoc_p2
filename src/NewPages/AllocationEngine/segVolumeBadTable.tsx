@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-// import Sidebar from "../../components/common/Sidebar";
+
 
 
 const SegVolumeBadTable: React.FC = () => {
