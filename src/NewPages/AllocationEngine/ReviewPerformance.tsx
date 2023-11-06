@@ -28,7 +28,7 @@ const ReviewPerformance: React.FC = () =>{
     };
 
     return(
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
       <div className="w-[95%] flex items-center justify-between ml-6">
       <div className=" flex justify-between  rounded-xl B1TabsContain">
               {BGroups.map((button, index) => (
