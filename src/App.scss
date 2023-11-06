@@ -1,0 +1,33 @@
+.CommonBodyWrap {
+  height: calc(100vh - 108px);
+  overflow-y: auto;
+}
+
+@media all and (max-width:1024px) {
+  .CommonBodyWrap{
+    padding: 0 20px;
+  }
+}
+@media all and (max-width:768px) {
+  .responsivePADDING{
+    padding-right: 0 !important;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  display: none;
+}
