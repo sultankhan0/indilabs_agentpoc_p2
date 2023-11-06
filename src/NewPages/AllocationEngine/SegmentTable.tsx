@@ -2,6 +2,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { AiOutlineDown } from 'react-icons/ai'
+import { HiPlus } from 'react-icons/hi'
 import AllocationStackedBarChart from './allocationStackedBarChart';
 import ReactApexChart from 'react-apexcharts';
 
@@ -108,6 +109,8 @@ function SegmentTable({}: Props) {
     }
   }, []);
 
+  const tableNumber = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+
 
 
 
@@ -177,6 +180,23 @@ function SegmentTable({}: Props) {
             
           </tbody>
       </table>
+      <div className="w-[100%] flex items-center">
+         <div className="w-[20%] flex items-center gap-1 border-2 ">
+           <HiPlus className="text-violet-800" size={35}/>
+           <button type='button' className="w-[90%] p-1 border-2 rounded font-['calibri' !important] font-[400] text-gray-500">Add/Edit</button>
+         </div>
+         <table className="w-[80%]" cellPadding={5}>
+           <tbody>
+             <tr className="border-2">
+              {tableNumber.map(each=>(
+                <td className="border-2 text-center font-['calibri' !1important] font-[500s]">{each}</td>
+              ))}
+             </tr>
+             
+           </tbody>
+         </table>
+      </div>
+      
     </div>
   );
 }
