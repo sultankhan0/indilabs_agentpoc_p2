@@ -428,7 +428,7 @@ const AllocationEngine = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-3">
-            <div className="col-span-1 lg:col-span-1">
+            <div className="col-span-1 lg:col-span-2">
               <AllocationButtons />
             </div>
 
@@ -477,7 +477,7 @@ const AllocationEngine = () => {
                 </div> */}
               </div>
             </div>
-            <div className="col-span-1 lg:col-span-6 bg-white rounded-xl p-3 shadow chartLineGraph">
+            <div className="col-span-1 lg:col-span-5 bg-white rounded-xl p-3 shadow chartLineGraph">
               {/* <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
                 Allocation Share
               </p> */}
