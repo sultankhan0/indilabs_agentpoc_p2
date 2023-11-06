@@ -47,7 +47,7 @@ const SegVolumeBadTable: React.FC = () => {
 
   return (
     <div className="w-[24.5%] bg-white rounded-xl border-2 ml-10">
-      <table cellPadding={20}>
+      <table className='w-full' cellPadding={20}>
       <thead>
         <tr>
             <th className="font-[calibri] font-[500] text-[20px]">Segment</th>

@@ -17,6 +17,7 @@ import {
 import DashboardHeader from "../../components/DshboardHeader/DashboardHeader";
 import "./Allocation.scss";
 import { ResponsiveContainer } from "recharts";
+import AllocationButtons from "./AllocationButtons";
 
 declare module "recharts" {
   interface RadialBarProps {
@@ -426,8 +427,12 @@ const AllocationEngine = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-3">
+            <div className="col-span-1 lg:col-span-1">
+              <AllocationButtons />
+            </div>
+
+            <div className="col-span-1 lg:col-span-5  bg-white rounded-xl p-3 shadow">
               <p className=" text-[18px] font-[400] text-[#7F7F7F] font-['calibri' !important] ">
                 Allocation Share
               </p>
@@ -472,7 +477,7 @@ const AllocationEngine = () => {
                 </div> */}
               </div>
             </div>
-            <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow chartLineGraph">
+            <div className="col-span-1 lg:col-span-6 bg-white rounded-xl p-3 shadow chartLineGraph">
               {/* <p className="text-blue-800 text-sm font-medium font-['DM Sans'] ">
                 Allocation Share
               </p> */}
@@ -490,6 +495,9 @@ const AllocationEngine = () => {
                 resultArrayList={resultArrayList}
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="col-span-1 lg:col-span-1 bg-white rounded-xl p-3 shadow">
               <p className="text-[#4e7496] text-[16px] font-[400] font-['Calibri' !important] ">
                 New Allocations: Recommended
