@@ -36,6 +36,10 @@ const ReviewPerformance: React.FC = () => {
     setActiveBucket(buttonId);
   };
 
+  const showTestIdComponent = () =>{
+    setShowTestIdComp(true)
+  }
+
   return (
     <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
       <div className="w-[95%] flex items-center justify-between ml-6">
@@ -64,32 +68,32 @@ const ReviewPerformance: React.FC = () => {
           </button>
           <button
             type="button"
-            className="text-white bg-green-500 border-2 pl-3 pr-3 rounded"
+            className="text-white bg-[#00B050] border-2 pl-3 pr-3 rounded"
           >
             MESSAGE
           </button>
           <button
             type="button"
-            className="text-white bg-violet-800 border-2 pl-3 pr-3 rounded"
+            className="text-white bg-[#7030A0] border-2 pl-3 pr-3 rounded"
           >
             CALL
           </button>
           <button
             type="button"
-            className="text-white bg-orange-500 border-2 pl-3 pr-3 rounded"
+            className="text-white bg-[#ED7D31] border-2 pl-3 pr-3 rounded"
           >
             AGENCY
           </button>
           <button
             type="button"
-            className="text-white bg-red-600 border-2 pl-3 pr-3 rounded"
+            className="text-white bg-[#FF0000] border-2 pl-3 pr-3 rounded"
           >
             LEGAL
           </button>
         </div>
       </div>
       <div className="flex flex-col">
-        <SegmentTable />
+        <SegmentTable showTestIdComponent={showTestIdComponent} showTestIdCompo={showTestIdComp} />
         {/* <div className="w-[95%] flex items-center ml-6">
           <div className="w-[20%] flex items-center gap-1 border-2 ">
             <HiPlus className="text-violet-800" size={35} />

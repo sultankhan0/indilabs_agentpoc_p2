@@ -2,13 +2,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { HiPlus } from "react-icons/hi";
-import AllocationStackedBarChart from "./allocationStackedBarChart";
+// import AllocationStackedBarChart from "./allocationStackedBarChart";
 import ReactApexChart from "react-apexcharts";
 
-type Props = {};
+type Props = {
+  showTestIdComponent?:any
+  showTestIdCompo?:any
+};
 
-function SegmentTable({}: Props) {
+function SegmentTable(props: Props) {
   const [activeData, setActiveData] = useState(1);
+  
+
+  const {showTestIdComponent,showTestIdCompo} = props
 
   const tableData = [
     {
@@ -84,7 +90,7 @@ function SegmentTable({}: Props) {
       },
     },
   ];
-  const COLORS = ["green", "purple", "orange", "red"];
+  const COLORS = ["#00B050", "#7030A0", "#ED7D31", "#FF0000"];
 
   const state = {
     series: [
@@ -166,6 +172,10 @@ function SegmentTable({}: Props) {
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
+  const onClickShowTestIdComp = () =>{
+    showTestIdComponent()
+  }
+
   return (
     // <div>
     //   <table className="w-300 table-auto">
@@ -210,13 +220,13 @@ function SegmentTable({}: Props) {
       <table className="w-[100%] border" cellPadding={10}>
         <thead>
           <tr>
-            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">
+            <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border">
               Segment
             </th>
-            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">
+            <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border">
               Volume
             </th>
-            <th className="font-[calibri] font-[500] text-[20px] border flex items-center gap-3">
+            <th className="font-['calibri' !important] font-[400] text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
               <button className=" w-[100px] border-2 rounded bg-violet-300 flex items-center justify-center gap-2">
                 MR{" "}
@@ -349,10 +359,10 @@ function SegmentTable({}: Props) {
               <div className="w-full flex items-center gap-1 border-2 ">
                 <HiPlus className="text-violet-800" size={35} />
                 <button
-                  // onClick={() => setShowTestIdComp(true)}
+                   onClick={onClickShowTestIdComp}
                   type="button"
                   className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${
-                    true && "bg-violet-300 text-gray-800 font-[500]"
+                    showTestIdCompo && "bg-violet-300 text-gray-800 font-[500]"
                   }`}
                 >
                   Add/Edit
@@ -362,7 +372,7 @@ function SegmentTable({}: Props) {
             <td>
               <div className="w-full flex justify-between">
                 {tableNumber?.map((each: any) => (
-                  <div className="flex-1 border-2 text-center font-['calibri' !1important] font-[500s]">
+                  <div className="flex-1 border-2 text-center font-['calibri' !1important] font-[500]">
                     {each}
                   </div>
                 ))}

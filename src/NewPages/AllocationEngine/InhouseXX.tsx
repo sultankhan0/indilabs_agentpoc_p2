@@ -10,7 +10,6 @@ import { GetCityData } from "../../api/api";
 import AllocationButtons from "./AllocationButtons";
 import SegVolumeBadTable from "./segVolumeBadTable";
 import AllocationStackedBarChart from "./allocationStackedBarChart";
-
 import { useNavigate } from "react-router-dom";
 
 
@@ -383,7 +382,7 @@ const InhouseXX = () => {
             Review Performance
           </button>
           <button className="self-end bg-[#DED6FF] border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md">
-            Optimize Strategy
+           Optimize Strategy
           </button>
         </div>
       </div>
