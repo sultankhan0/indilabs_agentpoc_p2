@@ -8,18 +8,22 @@ const AllocationStackedBarChart: React.FC = () => {
       {
         name: "Marine Sprite",
         data: [44, 55, 41, 37, 22],
+        color: "#00B050",
       },
       {
         name: "Striking Calf",
         data: [53, 32, 33, 52, 13],
+        color: "#7030A0",
       },
       {
         name: "Tank Picture",
         data: [12, 17, 11, 9, 15],
+        color: "#ED7D31",
       },
       {
         name: "Bucket Slope",
         data: [9, 7, 5, 8, 6],
+        color: "#FF0000",
       },
       //   {
       //     name: 'Reborn Kid',
@@ -69,6 +73,7 @@ const AllocationStackedBarChart: React.FC = () => {
         show: false,
       },
     },
+    // colors: ['#00B050', '#7030A0', '#ED7D31', '#FF0000']
   };
 
   (state.options.chart as any).type = "bar";
