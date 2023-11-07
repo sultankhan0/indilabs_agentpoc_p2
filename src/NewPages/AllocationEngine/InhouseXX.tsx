@@ -379,10 +379,10 @@ const InhouseXX = () => {
         <div className="self-end mt-3">
           <button
           onClick={navigateToReviewPerformance} 
-          className="self-end bg-[#DED6FF] border-2 border-gray-300 font-['calibri' !important]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3">
+          className="self-end bg-[#DED6FF] border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3">
             Review Performance
           </button>
-          <button className="self-end bg-[#DED6FF] border-2 font-['calibri' !important] border-gray-300  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md">
+          <button className="self-end bg-[#DED6FF] border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md">
             Optimize Strategy
           </button>
         </div>

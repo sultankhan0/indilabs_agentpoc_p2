@@ -158,11 +158,11 @@ function SegmentTable({}: Props) {
       <table className='w-[100%] border' cellPadding={10}>
       <thead>
         <tr>
-            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">Segment</th>
-            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">Volume</th>
-            <th className="font-[calibri] font-[500] text-[20px] border flex items-center gap-3">
+            <th className="w-[10%] font-['calibri' !important] text-[#000000] font-[500] text-[20px] border">Segment</th>
+            <th className="w-[10%] font-['calibri' !important] text-[#000000]  font-[500] text-[20px] border">Volume</th>
+            <th className="font-['calibri' !important] font-[400] text-[#000000]  text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
-              <button className=" w-[100px] border-2 rounded bg-violet-300 flex items-center justify-center gap-2">MR <span><AiOutlineDown/></span></button>
+              <button className=" w-[100px] border-2 rounded bg-[#DED6FF] text-[#404040] text-[19px] flex items-center justify-center gap-2">MR <span><AiOutlineDown/></span></button>
               </th>
         </tr>
       </thead>
@@ -172,8 +172,8 @@ function SegmentTable({}: Props) {
           // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
           className='text-center font-[calibri] font-[500] text-[19px] border-2'   
           >
-            <td className="border">{each.segment}</td>
-            <td className="border">{each.volume}</td>
+            <td className="border font-['calibri' !important] text-[#000000]">{each.segment}</td>
+            <td className="border font-['calibri' !1important] text-[#000000]">{each.volume}</td>
             {/* <td><ReactApexChart options={state.options as any} series={state.series} type="bar" height={350} /></td> */}
           </tr>
         ))}

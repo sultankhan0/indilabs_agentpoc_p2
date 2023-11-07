@@ -62,10 +62,10 @@ const ReviewPerformance: React.FC = () =>{
 
             <div className="flex items-center gap-1">
                 <button type="button" className="text-gray-500 border-2 pl-3 pr-3 rounded">HOLD</button>
-                <button type="button" className="text-white bg-green-500 border-2 pl-3 pr-3 rounded">MESSAGE</button>
-                <button type="button" className="text-white bg-violet-800 border-2 pl-3 pr-3 rounded">CALL</button>
-                <button type="button" className="text-white bg-orange-500 border-2 pl-3 pr-3 rounded">AGENCY</button>
-                <button type="button" className="text-white bg-red-600 border-2 pl-3 pr-3 rounded">LEGAL</button>
+                <button type="button" className="text-white bg-[#00B050] border-2 pl-3 pr-3 rounded">MESSAGE</button>
+                <button type="button" className="text-white bg-[#7030A0] border-2 pl-3 pr-3 rounded">CALL</button>
+                <button type="button" className="text-white bg-[#ED7D31] border-2 pl-3 pr-3 rounded">AGENCY</button>
+                <button type="button" className="text-white bg-[#FF0000] border-2 pl-3 pr-3 rounded">LEGAL</button>
 
             </div>
 
@@ -74,14 +74,14 @@ const ReviewPerformance: React.FC = () =>{
       <SegmentTable/>
       <div className="w-[95%] flex items-center ml-6">
          <div className="w-[20%] flex items-center gap-1 border-2 ">
-           <HiPlus className="text-violet-800" size={35}/>
-           <button onClick={()=>setShowTestIdComp(true)} type='button' className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${showTestIdComp && 'bg-violet-300 text-gray-800 font-[500]' }`}>Add/Edit</button>
+           <HiPlus className="text-[#7030A0]" size={35}/>
+           <button onClick={()=>setShowTestIdComp(true)} type='button' className={`w-[90%] p-1 border-2 border-[#E7E6E6] text-[16px] rounded-md font-['calibri' !important] font-[400] text-[#7f7f7f] ${showTestIdComp && 'bg-violet-300 text-gray-800 font-[500]' }`}>Add/Edit</button>
          </div>
          <table className="w-[80%]" cellPadding={5}>
            <tbody>
              <tr className="border-2">
               {tableNumber.map(each=>(
-                <td className="border-2 text-center font-['calibri' !1important] font-[500s]">{each}</td>
+                <td className="border-2 text-center font-['calibri' !1important] font-[500]">{each}</td>
               ))}
              </tr>
              

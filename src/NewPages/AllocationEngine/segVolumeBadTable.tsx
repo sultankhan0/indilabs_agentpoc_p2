@@ -46,22 +46,22 @@ const SegVolumeBadTable: React.FC = () => {
 
 
   return (
-    <div className="w-[24.5%] bg-white rounded-xl border-2 ml-10">
+    <div className="w-[30%] bg-white rounded-xl border-2 ml-5">
       <table className='w-full' cellPadding={20}>
       <thead>
         <tr>
-            <th className="font-[calibri] font-[500] text-[20px]">Segment</th>
-            <th className="font-[calibri] font-[500] text-[20px]">Volume</th>
-            <th className="font-[calibri] font-[500] text-[20px]">Bad%</th>
+            <th className="font-['calibri' !important] font-[400] text-[18px] text-[#000000]">Segment</th>
+            <th className="font-['calibri' !important] font-[400] text-[18px] text-[#000000]">Volume</th>
+            <th className="font-['calibri' !important] font-[400] text-[18px] text-[#000000]">Bad%</th>
         </tr>
       </thead>
       <tbody className="w-full">
         {tableData.map(each=>(
           <tr onClick={()=>{setActiveData(each.id)}}
           // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
-          className={` text-center font-[calibri] font-[500] text-[19px] border-b-2  ${
+          className={` text-center font-['calibri' !important] font-[400] text-[18px] border-b-2 text-[#000000]  ${
             each.id === activeData &&
-            ` bg-violet-200`
+            ` bg-[#DED6FF]`
           } cursor-pointer `}
           >
             <td>{each.segment}</td>
