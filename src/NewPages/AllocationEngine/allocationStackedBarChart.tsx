@@ -1,57 +1,53 @@
-import React from 'react';
-import ReactApexChart from 'react-apexcharts';
-import {useEffect} from 'react'
+import React from "react";
+import ReactApexChart from "react-apexcharts";
+import { useEffect } from "react";
 
 const AllocationStackedBarChart: React.FC = () => {
-
-    
-
   const state = {
     series: [
       {
-        name: 'Marine Sprite',
+        name: "Marine Sprite",
         data: [44, 55, 41, 37, 22],
       },
       {
-        name: 'Striking Calf',
+        name: "Striking Calf",
         data: [53, 32, 33, 52, 13],
       },
       {
-        name: 'Tank Picture',
+        name: "Tank Picture",
         data: [12, 17, 11, 9, 15],
       },
       {
-        name: 'Bucket Slope',
+        name: "Bucket Slope",
         data: [9, 7, 5, 8, 6],
       },
-    //   {
-    //     name: 'Reborn Kid',
-    //     data: [25, 12, 19, 32, 25],
-    //   },
+      //   {
+      //     name: 'Reborn Kid',
+      //     data: [25, 12, 19, 32, 25],
+      //   },
     ],
     options: {
       chart: {
-        type: 'bar',
+        type: "bar",
         height: 350,
         stacked: true,
-        stackType: '100%',
+        stackType: "100%",
       },
       plotOptions: {
         bar: {
           horizontal: true,
+          // distributed: true,
           dataLabels: {
             enabled: false, // Disable data labels on bars
           },
-          
-
         },
       },
       stroke: {
         width: 1,
-        colors: ['#fff'],
+        colors: ["#fff"],
       },
       title: {
-        text: '',
+        text: "",
       },
       xaxis: {
         categories: [2008, 2009, 2010, 2011, 2012],
@@ -59,10 +55,9 @@ const AllocationStackedBarChart: React.FC = () => {
       tooltip: {
         y: {
           formatter: (val: number) => {
-            return val + 'K';
+            return val + "K";
           },
         },
-        
       },
       fill: {
         opacity: 1,
@@ -73,20 +68,20 @@ const AllocationStackedBarChart: React.FC = () => {
       menu: {
         show: false,
       },
-      
     },
   };
 
-  (state.options.chart as any).type = 'bar';
+  (state.options.chart as any).type = "bar";
 
   useEffect(() => {
     // Hide the menu icon after the chart is rendered
-    const menuIcon = document.querySelector(".apexcharts-menu-icon") as HTMLElement;
+    const menuIcon = document.querySelector(
+      ".apexcharts-menu-icon"
+    ) as HTMLElement;
     if (menuIcon) {
       menuIcon.style.display = "none";
     }
   }, []);
-
 
   return (
     <div id="chart" className="w-[60%] bg-white border-2 p-3 rounded-xl">
@@ -102,7 +97,12 @@ const AllocationStackedBarChart: React.FC = () => {
             </div>
         </div>
       {/* <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
-      <ReactApexChart options={state.options as any} series={state.series} type="bar" height={350} />
+      <ReactApexChart
+        options={state.options as any}
+        series={state.series}
+        type="bar"
+        height={350}
+      />
     </div>
   );
 };

@@ -1,49 +1,100 @@
-
-import React from 'react';
+import React from "react";
 import { useEffect, useState } from "react";
-import { AiOutlineDown } from 'react-icons/ai'
-import { HiPlus } from 'react-icons/hi'
-import AllocationStackedBarChart from './allocationStackedBarChart';
-import ReactApexChart from 'react-apexcharts';
-
+import { AiOutlineDown } from "react-icons/ai";
+import { HiPlus } from "react-icons/hi";
+import AllocationStackedBarChart from "./allocationStackedBarChart";
+import ReactApexChart from "react-apexcharts";
 
 type Props = {};
 
 function SegmentTable({}: Props) {
-
   const [activeData, setActiveData] = useState(1);
 
   const tableData = [
     {
-      segment: 'Champion',
-      volume: '80%',
-      Bad: '16%',
-      id:1
+      segment: "Champion",
+      volume: "80%",
+      Bad: "16%",
+      id: 1,
+      treatmentData: {
+        message: {
+          start: 1,
+          end: 7,
+        },
+        call: {
+          start: 8,
+          end: 22,
+        },
+        agency: {
+          start: 23,
+          end: 28,
+        },
+        legal: {
+          start: 29,
+          end: 30,
+        },
+      },
     },
     {
-      segment: 'Challenger 1',
-      volume: '10%',
-      Bad: '9%',
-      id:2
+      segment: "Challenger 1",
+      volume: "10%",
+      Bad: "9%",
+      id: 2,
+      treatmentData: {
+        message: {
+          start: 1,
+          end: 12,
+        },
+        call: {
+          start: 13,
+          end: 22,
+        },
+        agency: {
+          start: 23,
+          end: 28,
+        },
+        legal: {
+          start: 29,
+          end: 30,
+        },
+      },
     },
     {
-      segment: 'Challenger 2',
-      volume: '10%',
-      Bad: '4%',
-      id:3
-    }, 
+      segment: "Challenger 2",
+      volume: "10%",
+      Bad: "4%",
+      id: 3,
+      treatmentData: {
+        message: {
+          start: 0,
+          end: 0,
+        },
+        call: {
+          start: 1,
+          end: 22,
+        },
+        agency: {
+          start: 23,
+          end: 28,
+        },
+        legal: {
+          start: 29,
+          end: 30,
+        },
+      },
+    },
   ];
-
+  const COLORS = ["green", "purple", "orange", "red"];
 
   const state = {
     series: [
       {
-        name: 'Treatments',
+        name: "Treatments",
         data: [
           {
-            x: 'HOLD',
+            x: "HOLD",
             y: [44, 55, 41, 37, 22],
-            fillColor: '#E57373', // Color for HOLD
+            fillColor: "#E57373", // Color for HOLD
           },
           // {
           //   x: 'Striking Calf',
@@ -55,7 +106,7 @@ function SegmentTable({}: Props) {
     ],
     options: {
       chart: {
-        type: 'bar',
+        type: "bar",
       },
       plotOptions: {
         bar: {
@@ -68,26 +119,25 @@ function SegmentTable({}: Props) {
       },
       stroke: {
         width: 1,
-        colors: ['#fff'],
+        colors: ["#fff"],
       },
       title: {
-        text: '',
+        text: "",
       },
       xaxis: {
-        categories: ['Treatments'],
-        
+        categories: ["Treatments"],
       },
       tooltip: {
         y: {
           formatter: (val: number) => {
-            return val + 'K';
+            return val + "K";
           },
         },
       },
       fill: {
         opacity: 1,
         pattern: {
-          style: ['solid'],
+          style: ["solid"],
         },
       },
       legend: {
@@ -99,20 +149,22 @@ function SegmentTable({}: Props) {
     },
   };
 
-  (state.options.chart as any).type = 'bar';
+  (state.options.chart as any).type = "bar";
 
   useEffect(() => {
     // Hide the menu icon after the chart is rendered
-    const menuIcon = document.querySelector('.apexcharts-menu-icon') as HTMLElement;
+    const menuIcon = document.querySelector(
+      ".apexcharts-menu-icon"
+    ) as HTMLElement;
     if (menuIcon) {
-      menuIcon.style.display = 'none';
+      menuIcon.style.display = "none";
     }
   }, []);
 
-  const tableNumber = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-
-
-
+  const tableNumber = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30,
+  ];
 
   return (
     // <div>
@@ -128,7 +180,7 @@ function SegmentTable({}: Props) {
     //         <td className="px-4 py-2">Champion</td>
     //         <td className="px-4 py-2">
     //           <div className="flex items-center">
-                
+
     //             <span className="ml-1">80%</span>
     //           </div>
     //         </td>
@@ -137,7 +189,7 @@ function SegmentTable({}: Props) {
     //         <td className="px-4 py-2">Challenger1</td>
     //         <td className="px-4 py-2">
     //           <div className="flex items-center">
-               
+
     //             <span className="ml-1">20%</span>
     //           </div>
     //         </td>
@@ -146,7 +198,7 @@ function SegmentTable({}: Props) {
     //         <td className="px-4 py-2">Challenger1</td>
     //         <td className="px-4 py-2">
     //           <div className="flex items-center">
-               
+
     //             <span className="ml-1">20%</span>
     //           </div>
     //         </td>
@@ -155,30 +207,153 @@ function SegmentTable({}: Props) {
     //   </table>
     // </div>
     <div className="w-[95%] bg-white rounded ml-6">
-      <table className='w-[100%] border' cellPadding={10}>
-      <thead>
-        <tr>
-            <th className="w-[10%] font-['calibri' !important] text-[#000000] font-[500] text-[20px] border">Segment</th>
-            <th className="w-[10%] font-['calibri' !important] text-[#000000]  font-[500] text-[20px] border">Volume</th>
-            <th className="font-['calibri' !important] font-[400] text-[#000000]  text-[20px] border flex items-center gap-3">
+      <table className="w-[100%] border" cellPadding={10}>
+        <thead>
+          <tr>
+            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">
+              Segment
+            </th>
+            <th className="w-[10%] font-[calibri] font-[500] text-[20px] border">
+              Volume
+            </th>
+            <th className="font-[calibri] font-[500] text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
-              <button className=" w-[100px] border-2 rounded bg-[#DED6FF] text-[#404040] text-[19px] flex items-center justify-center gap-2">MR <span><AiOutlineDown/></span></button>
-              </th>
-        </tr>
-      </thead>
-      <tbody className="w-full">
-        {tableData.map(each=>(
-          <tr
-          // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
-          className='text-center font-[calibri] font-[500] text-[19px] border-2'   
-          >
-            <td className="border font-['calibri' !important] text-[#000000]">{each.segment}</td>
-            <td className="border font-['calibri' !1important] text-[#000000]">{each.volume}</td>
-            {/* <td><ReactApexChart options={state.options as any} series={state.series} type="bar" height={350} /></td> */}
+              <button className=" w-[100px] border-2 rounded bg-violet-300 flex items-center justify-center gap-2">
+                MR{" "}
+                <span>
+                  <AiOutlineDown />
+                </span>
+              </button>
+            </th>
           </tr>
-        ))}
-            
-          </tbody>
+        </thead>
+        <tbody className="w-full">
+          {tableData.map(
+            (each: {
+              segment: string;
+              volume: string;
+              treatmentData: {
+                message: {
+                  start: number;
+                  end: number;
+                };
+                call: {
+                  start: number;
+                  end: number;
+                };
+                agency: {
+                  start: number;
+                  end: number;
+                };
+                legal: {
+                  start: number;
+                  end: number;
+                };
+              };
+            }) => (
+              <tr
+                // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
+                className="text-center font-[calibri] font-[500] text-[19px] border-2"
+              >
+                <td className="border">{each.segment}</td>
+                <td className="border">{each.volume}</td>
+                <td className="border">
+                  <div className="bg-slate-400 w-full flex h-full">
+                    <div
+                      className=""
+                      style={{
+                        height: "28px",
+                        width: `${Number(
+                          ((each?.treatmentData?.message.end -
+                            each?.treatmentData?.message.start +
+                            1) *
+                            100) /
+                            30
+                        )
+                          .toFixed(2)
+                          .toString()}%`,
+                        backgroundColor: COLORS[0],
+                      }}
+                    ></div>
+                    <div
+                      className=""
+                      style={{
+                        height: "28px",
+                        width: `${Number(
+                          ((each.treatmentData?.call.end -
+                            each.treatmentData?.call.start +
+                            1) *
+                            100) /
+                            30
+                        )
+                          .toFixed(2)
+                          .toString()}%`,
+                        backgroundColor: COLORS[1],
+                      }}
+                    ></div>
+                    <div
+                      className=""
+                      style={{
+                        height: "28px",
+                        width: `${Number(
+                          ((each.treatmentData?.agency.end -
+                            each.treatmentData?.agency.start +
+                            1) *
+                            100) /
+                            30
+                        )
+                          .toFixed(2)
+                          .toString()}%`,
+                        backgroundColor: COLORS[2],
+                      }}
+                    ></div>
+                    <div
+                      className=""
+                      style={{
+                        height: "28px",
+                        width: `${Number(
+                          ((each.treatmentData?.legal.end -
+                            each.treatmentData?.legal.start +
+                            1) *
+                            100) /
+                            30
+                        )
+                          .toFixed(2)
+                          .toString()}%`,
+                        backgroundColor: COLORS[3],
+                      }}
+                    ></div>
+                  </div>
+                </td>
+              </tr>
+            )
+          )}
+          <tr className="text-center font-[calibri] font-[500] text-[19px] border-2">
+            <td className="border" colSpan={2}>
+              <div className="w-full flex items-center gap-1 border-2 ">
+                <HiPlus className="text-violet-800" size={35} />
+                <button
+                  // onClick={() => setShowTestIdComp(true)}
+                  type="button"
+                  className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${
+                    true && "bg-violet-300 text-gray-800 font-[500]"
+                  }`}
+                >
+                  Add/Edit
+                </button>
+              </div>
+            </td>
+            <td>
+              <div className="w-full flex justify-between">
+                {tableNumber?.map((each: any) => (
+                  <div className="flex-1 border-2 text-center font-['calibri' !1important] font-[500s]">
+                    {each}
+                  </div>
+                ))}
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
       {/* <div className="w-[100%] flex items-center">
          <div className="w-[20%] flex items-center gap-1 border-2 ">
@@ -190,13 +365,13 @@ function SegmentTable({}: Props) {
              <tr className="border-2">
               {tableNumber.map(each=>(
                 <td className="border-2 text-center font-['calibri' !1important] font-[500s]">{each}</td>
-              ))}
+              ))}import index from '../../pages/CollectionDashboard/index';
+
              </tr>
              
            </tbody>
          </table>
       </div> */}
-      
     </div>
   );
 }
