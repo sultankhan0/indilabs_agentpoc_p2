@@ -265,8 +265,12 @@ function SegmentTable({}: Props) {
                         height: "28px",
                         width: `${Number(
                           ((each?.treatmentData?.message.end -
-                            each?.treatmentData?.message.start +
-                            1) *
+                            each?.treatmentData?.message.start ===
+                          0
+                            ? 0
+                            : each?.treatmentData?.message.end -
+                              each?.treatmentData?.message.start +
+                              1) *
                             100) /
                             30
                         )
@@ -280,9 +284,13 @@ function SegmentTable({}: Props) {
                       style={{
                         height: "28px",
                         width: `${Number(
-                          ((each.treatmentData?.call.end -
-                            each.treatmentData?.call.start +
-                            1) *
+                          ((each?.treatmentData?.call.end -
+                            each?.treatmentData?.call.start ===
+                          0
+                            ? 0
+                            : each?.treatmentData?.call.end -
+                              each?.treatmentData?.call.start +
+                              1) *
                             100) /
                             30
                         )
@@ -296,9 +304,13 @@ function SegmentTable({}: Props) {
                       style={{
                         height: "28px",
                         width: `${Number(
-                          ((each.treatmentData?.agency.end -
-                            each.treatmentData?.agency.start +
-                            1) *
+                          ((each?.treatmentData?.agency.end -
+                            each?.treatmentData?.agency.start ===
+                          0
+                            ? 0
+                            : each?.treatmentData?.agency.end -
+                              each?.treatmentData?.agency.start +
+                              1) *
                             100) /
                             30
                         )
@@ -312,9 +324,13 @@ function SegmentTable({}: Props) {
                       style={{
                         height: "28px",
                         width: `${Number(
-                          ((each.treatmentData?.legal.end -
-                            each.treatmentData?.legal.start +
-                            1) *
+                          ((each?.treatmentData?.legal.end -
+                            each?.treatmentData?.legal.start ===
+                          0
+                            ? 0
+                            : each?.treatmentData?.legal.end -
+                              each?.treatmentData?.legal.start +
+                              1) *
                             100) /
                             30
                         )

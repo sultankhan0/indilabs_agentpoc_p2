@@ -38,6 +38,7 @@ import PLImpactChart from "./NewPages/AllocationEngine/PLImpactChart";
 import ReviewPerformance from "./NewPages/AllocationEngine/ReviewPerformance";
 import SequenceAttributes from "./NewPages/AllocationEngine/SequenceAttributes";
 import InhouseXX from "./NewPages/AllocationEngine/InhouseXX";
+// import SingleStackedBarChart from "./NewPages/AllocationEngine/singleStackedChart";
 
 import "./App.scss";
 import { useEffect, useState } from "react";
@@ -89,6 +90,7 @@ function App() {
           <Route path="/testid" element={<TestId/>} />
           <Route path="/segmenttable" element={<SegmentTable/>} />
           <Route path="/SequenceAttributes" element={<SequenceAttributes/>} />
+          {/* <Route path="/SingleStackedBarChart" element={<SingleStackedBarChart/>} /> */}
 
           <Route path="/home" element={<HomePage />} />
           <Route path="/data" element={<DataPage />} />

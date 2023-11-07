@@ -22,7 +22,7 @@ const AllocationButtons: React.FC = () => {
 
 
   return (
-    <div className="ml-5 flex flex-col gap-12">
+    <div className="ml-5 flex flex-col gap-11">
        {Buttons.map((button, index) => (
                 <button
                   key={button.id}

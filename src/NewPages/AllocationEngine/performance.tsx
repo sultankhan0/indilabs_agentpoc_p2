@@ -38,22 +38,22 @@ const data = [
 
 export default function Performance() {
   return (
-    <div className="w-[38%] bg-white rounded-xl border-2">
+    <div className="w-[35%] bg-white rounded-xl border-2">
         <div className="flex items-center justify-between p-4">
         <h1 className="text-[20px] font-[500] font-[calibri] ">Performance</h1>
         <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-            <div className="w-[25px] h-[10px] bg-blue-400 border rounded-xl"></div>
+            <div className="w-[25px] h-[10px] bg-[#8EB5F5] border rounded-xl"></div>
             <div className="text-[13px] font-[calibri]">Champion</div>
             </div>
             <div className="flex items-center gap-2">
-            <div className="w-[25px] h-[10px] bg-violet-400 border rounded-xl"></div>
+            <div className="w-[25px] h-[10px] bg-[#A090D5] border rounded-xl"></div>
             <div className="text-[13px] font-[calibri]">Challenger</div>
             </div>
         </div>
         </div>
         
-    <RadarChart cx={300} cy={250} outerRadius={100} width={500} height={400} data={data} className="-mt-[100px] -ml-[60px]">
+    <RadarChart cx={300} cy={250} outerRadius={100} width={500} height={400} data={data} className="-mt-[100px] -ml-[90px]">
       <PolarGrid />
       <PolarAngleAxis dataKey="subject" tick={{ fontSize: 14, fill: '#000',fontFamily:'calibri' }} />
       {/* <PolarRadiusAxis angle={30} domain={[0, 150]} /> */}
