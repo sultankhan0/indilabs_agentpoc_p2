@@ -12,7 +12,6 @@ import SegVolumeBadTable from "./segVolumeBadTable";
 import AllocationStackedBarChart from "./allocationStackedBarChart";
 import { useNavigate } from "react-router-dom";
 
-
 import {
   Allocation,
   ExclusionCriteria,
@@ -39,8 +38,8 @@ import { ResponsiveContainer } from "recharts";
 
 const InhouseXX = () => {
   const [buttons, setButtons] = useState(0);
-  const [reviewBtn,setReviewBtn] = useState(false)
-  const [optimizeBtn,setOptimizeBtn] = useState(false)
+  const [reviewBtn, setReviewBtn] = useState(false);
+  const [optimizeBtn, setOptimizeBtn] = useState(false);
   const [b2, setB2] = useState(false);
   const [selectedCity, setSelectedCity] = useState("pune");
   const [activeBucket, setActiveBucket] = useState("b1");
@@ -61,7 +60,7 @@ const InhouseXX = () => {
   const [maxAllocationData, setMaxAllocationData] = useState<number>();
   const [minAllocationData, setMinAllocationData] = useState<number>();
   const [resultArrayList, setResultArrayList] = useState<number[]>([]);
-
+  const [selectedSegment, setSelectedSegment] = useState<string>("VHR");
   const cities = [
     { id: "pune", name: "PUN" },
     { id: "delhi", name: "DEL" },
@@ -125,7 +124,7 @@ const InhouseXX = () => {
 
   const fetchData = async (city: string, bucket: string) => {
     setLoader(true);
-    
+
     const res = await GetCityData({ city, bucket });
 
     if (res.status === 200) {
@@ -193,19 +192,18 @@ const InhouseXX = () => {
 
   console.log("allocationData", allocationData);
 
-  const navigateToReviewPerformance = () =>{
-    setReviewBtn(true)
-    navigate('/strategy/allocationEngine/reviewPerformance')
-  }
+  const navigateToReviewPerformance = () => {
+    setReviewBtn(true);
+    navigate("/strategy/allocationEngine/reviewPerformance");
+  };
 
-  const onClickOptimizeStrategy = () =>{
-    setOptimizeBtn(true)
-  }
+  const onClickOptimizeStrategy = () => {
+    setOptimizeBtn(true);
+  };
 
-
-  const showButtons = (num:number) =>{
-    setButtons(num)
-  }
+  const showButtons = (num: number) => {
+    setButtons(num);
+  };
 
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper  relative">
@@ -381,22 +379,35 @@ const InhouseXX = () => {
           </div>
 
           <div className="flex gap-5">
-             <AllocationButtons/>
-              <SegVolumeBadTable showButtons={showButtons} />
-              <AllocationStackedBarChart/>
+            <AllocationButtons />
+            <SegVolumeBadTable
+              showButtons={showButtons}
+              setSelectedSegment={setSelectedSegment}
+            />
+            <AllocationStackedBarChart selectedSegment={selectedSegment} />
           </div>
         </>
 
-        {(buttons>0) &&<div className="self-end mt-3">
-          <button
-          onClick={navigateToReviewPerformance} 
-          className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${reviewBtn && 'bg-[#DED6FF]'}`}>
-            Review Performance
-          </button>
-          <button onClick={onClickOptimizeStrategy} className={`self-end border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md ${optimizeBtn && 'bg-[#DED6FF]'}`}>
-           Optimize Strategy
-          </button>
-        </div>}
+        {buttons > 0 && (
+          <div className="self-end mt-3">
+            <button
+              onClick={navigateToReviewPerformance}
+              className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${
+                reviewBtn && "bg-[#DED6FF]"
+              }`}
+            >
+              Review Performance
+            </button>
+            <button
+              onClick={onClickOptimizeStrategy}
+              className={`self-end border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md ${
+                optimizeBtn && "bg-[#DED6FF]"
+              }`}
+            >
+              Optimize Strategy
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

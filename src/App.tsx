@@ -79,17 +79,17 @@ function App() {
         <Route element={<Sidebar />}>
           <Route path="/AllocationEngine" element={<AllocationEngine />} />
           <Route path="/InhouseXX" element={<InhouseXX />} />
-          
+
           <Route path="/AllocationButtons" element={<AllocationButtons />} />
-          <Route path="/segVolumeTable" element={<SegVolumeBadTable />} />
+
           <Route path="/TestPipeline" element={<TestPipeLine />} />
           <Route path="/performance" element={<Performance />} />
-          <Route path="/stackedChart" element={<AllocationStackedBarChart />} />
-          <Route path="/PLImpactChart" element={<PLImpactChart/>} />
-          <Route path="/treatments" element={<Treatment/>} />
-          <Route path="/testid" element={<TestId/>} />
-          <Route path="/segmenttable" element={<SegmentTable/>} />
-          <Route path="/SequenceAttributes" element={<SequenceAttributes/>} />
+
+          <Route path="/PLImpactChart" element={<PLImpactChart />} />
+          <Route path="/treatments" element={<Treatment />} />
+          <Route path="/testid" element={<TestId />} />
+          <Route path="/segmenttable" element={<SegmentTable />} />
+          <Route path="/SequenceAttributes" element={<SequenceAttributes />} />
           {/* <Route path="/SingleStackedBarChart" element={<SingleStackedBarChart/>} /> */}
 
           <Route path="/home" element={<HomePage />} />
@@ -99,7 +99,10 @@ function App() {
           <Route path="/diagnostics" element={<Diagnostics />} />
           <Route path="/strategy" element={<Strategy />} />
           <Route path="/strategy/optimization" element={<Strategy />} />
-          <Route path="/strategy/allocationEngine/reviewPerformance" element={<ReviewPerformance />} />
+          <Route
+            path="/strategy/allocationEngine/reviewPerformance"
+            element={<ReviewPerformance />}
+          />
           <Route
             path="/strategy/allocationEngine"
             element={<AllocationEngine />}

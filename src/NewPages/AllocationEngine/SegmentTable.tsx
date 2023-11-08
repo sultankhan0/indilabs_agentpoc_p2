@@ -4,93 +4,103 @@ import { AiOutlineDown } from "react-icons/ai";
 import { HiPlus } from "react-icons/hi";
 // import AllocationStackedBarChart from "./allocationStackedBarChart";
 import ReactApexChart from "react-apexcharts";
+import { useDispatch, useSelector } from "react-redux";
+import { getPerformanceData } from "../../redux/reducers/ReviewPerformanceReducer/ReviewPerformanceSlice";
 
 type Props = {
-  showTestIdComponent?:any
-  showTestIdCompo?:any
-  segmentData?:string
+  showTestIdComponent?: any;
+  showTestIdCompo?: any;
+  segmentData?: string;
 };
 
 function SegmentTable(props: Props) {
   const [activeData, setActiveData] = useState(1);
-  
 
-  const {showTestIdComponent,showTestIdCompo,segmentData} = props
+  const { showTestIdComponent, showTestIdCompo, segmentData } = props;
 
-  const tableData = [
-    {
-      segment: "Champion",
-      volume: "80%",
-      Bad: "16%",
-      id: 1,
-      treatmentData: {
-        message: {
-          start: 1,
-          end: 7,
-        },
-        call: {
-          start: 8,
-          end: 22,
-        },
-        agency: {
-          start: 23,
-          end: 28,
-        },
-        legal: {
-          start: 29,
-          end: 30,
-        },
-      },
-    },
-    {
-      segment: "Challenger 1",
-      volume: "10%",
-      Bad: "9%",
-      id: 2,
-      treatmentData: {
-        message: {
-          start: 1,
-          end: 12,
-        },
-        call: {
-          start: 13,
-          end: 22,
-        },
-        agency: {
-          start: 23,
-          end: 28,
-        },
-        legal: {
-          start: 29,
-          end: 30,
-        },
-      },
-    },
-    {
-      segment: "Challenger 2",
-      volume: "10%",
-      Bad: "4%",
-      id: 3,
-      treatmentData: {
-        message: {
-          start: 0,
-          end: 0,
-        },
-        call: {
-          start: 1,
-          end: 22,
-        },
-        agency: {
-          start: 23,
-          end: 28,
-        },
-        legal: {
-          start: 29,
-          end: 30,
-        },
-      },
-    },
-  ];
+  // const tableData = [
+  //   {
+  //     segment: "Champion",
+  //     volume: "80%",
+  //     Bad: "16%",
+  //     id: 1,
+  //     treatmentData: {
+  //       message: {
+  //         start: 1,
+  //         end: 7,
+  //       },
+  //       call: {
+  //         start: 8,
+  //         end: 22,
+  //       },
+  //       agency: {
+  //         start: 23,
+  //         end: 28,
+  //       },
+  //       legal: {
+  //         start: 29,
+  //         end: 30,
+  //       },
+  //     },
+  //   },
+  //   {
+  //     segment: "Challenger 1",
+  //     volume: "10%",
+  //     Bad: "9%",
+  //     id: 2,
+  //     treatmentData: {
+  //       message: {
+  //         start: 1,
+  //         end: 12,
+  //       },
+  //       call: {
+  //         start: 13,
+  //         end: 22,
+  //       },
+  //       agency: {
+  //         start: 23,
+  //         end: 28,
+  //       },
+  //       legal: {
+  //         start: 29,
+  //         end: 30,
+  //       },
+  //     },
+  //   },
+  //   {
+  //     segment: "Challenger 2",
+  //     volume: "10%",
+  //     Bad: "4%",
+  //     id: 3,
+  //     treatmentData: {
+  //       message: {
+  //         start: 0,
+  //         end: 0,
+  //       },
+  //       call: {
+  //         start: 1,
+  //         end: 22,
+  //       },
+  //       agency: {
+  //         start: 23,
+  //         end: 28,
+  //       },
+  //       legal: {
+  //         start: 29,
+  //         end: 30,
+  //       },
+  //     },
+  //   },
+  // ];
+  const dispatch: any = useDispatch();
+  const tableData: any = useSelector(
+    (state: any) => state?.performance.performanceData
+  );
+  console.log("tableData", tableData);
+  useEffect(() => {
+    dispatch(getPerformanceData());
+  }, []);
+
   const COLORS = ["#00B050", "#7030A0", "#ED7D31", "#FF0000"];
 
   const state = {
@@ -173,11 +183,9 @@ function SegmentTable(props: Props) {
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
-  const onClickShowTestIdComp = () =>{
-    showTestIdComponent()
-  }
-
-  
+  const onClickShowTestIdComp = () => {
+    showTestIdComponent();
+  };
 
   return (
     // <div>
@@ -231,7 +239,10 @@ function SegmentTable(props: Props) {
             </th>
             <th className="font-['calibri' !important] font-[400] text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
-              <select defaultValue={segmentData}  className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2">
+              <select
+                defaultValue={segmentData}
+                className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2"
+              >
                 <option value="VHR">VHR</option>
                 <option value="HR">HR</option>
                 <option value="MR">MR</option>
@@ -242,7 +253,7 @@ function SegmentTable(props: Props) {
           </tr>
         </thead>
         <tbody className="w-full">
-          {tableData.map(
+          {tableData?.map(
             (each: {
               segment: string;
               volume: string;
@@ -363,7 +374,7 @@ function SegmentTable(props: Props) {
               <div className="w-full flex items-center gap-1 border-2 ">
                 <HiPlus className="text-violet-800" size={35} />
                 <button
-                   onClick={onClickShowTestIdComp}
+                  onClick={onClickShowTestIdComp}
                   type="button"
                   className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${
                     showTestIdCompo && "bg-violet-300 text-gray-800 font-[500]"
@@ -396,6 +407,8 @@ function SegmentTable(props: Props) {
               {tableNumber.map(each=>(
                 <td className="border-2 text-center font-['calibri' !1important] font-[500s]">{each}</td>
               ))}import index from '../../pages/CollectionDashboard/index';
+import SegmentTable from './SegmentTable';
+import Performance from './performance';
 
              </tr>
              

@@ -2,34 +2,123 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { useEffect } from "react";
 
-const AllocationStackedBarChart: React.FC = () => {
-  const state = {
-    series: [
-      {
-        name: "Marine Sprite",
-        data: [44, 55, 41, 37, 22],
-        color: "#00B050",
-      },
-      {
-        name: "Striking Calf",
-        data: [53, 32, 33, 52, 13],
-        color: "#7030A0",
-      },
-      {
-        name: "Tank Picture",
-        data: [12, 17, 11, 9, 15],
-        color: "#ED7D31",
-      },
-      {
-        name: "Bucket Slope",
-        data: [9, 7, 5, 8, 6],
-        color: "#FF0000",
-      },
-      //   {
-      //     name: 'Reborn Kid',
-      //     data: [25, 12, 19, 32, 25],
-      //   },
-    ],
+type Props = {
+  selectedSegment: string;
+};
+const AllocationStackedBarChart: React.FC<Props> = (props) => {
+  const state: any = {
+    series: {
+      VHR: [
+        {
+          name: "Marine Sprite",
+          data: [44, 55, 41, 37, 22],
+          color: "#00B050",
+        },
+        {
+          name: "Striking Calf",
+          data: [53, 32, 33, 52, 13],
+          color: "#7030A0",
+        },
+        {
+          name: "Tank Picture",
+          data: [12, 17, 11, 9, 15],
+          color: "#ED7D31",
+        },
+        {
+          name: "Bucket Slope",
+          data: [9, 7, 5, 8, 6],
+          color: "#FF0000",
+        },
+      ],
+      HR: [
+        {
+          name: "Marine Sprite",
+          data: [53, 32, 33, 52, 13],
+          color: "#00B050",
+        },
+        {
+          name: "Striking Calf",
+          data: [9, 7, 5, 8, 6],
+          color: "#7030A0",
+        },
+        {
+          name: "Tank Picture",
+          data: [12, 17, 11, 9, 15],
+          color: "#ED7D31",
+        },
+        {
+          name: "Bucket Slope",
+          data: [44, 55, 41, 37, 22],
+          color: "#FF0000",
+        },
+      ],
+      MR: [
+        {
+          name: "Marine Sprite",
+          data: [44, 55, 41, 37, 22],
+          color: "#00B050",
+        },
+        {
+          name: "Striking Calf",
+          data: [53, 32, 33, 52, 13],
+          color: "#7030A0",
+        },
+        {
+          name: "Tank Picture",
+          data: [44, 55, 41, 37, 22],
+          color: "#ED7D31",
+        },
+        {
+          name: "Bucket Slope",
+          data: [9, 7, 5, 8, 6],
+          color: "#FF0000",
+        },
+      ],
+      LR: [
+        {
+          name: "Marine Sprite",
+          data: [12, 17, 11, 9, 15],
+          color: "#00B050",
+        },
+        {
+          name: "Striking Calf",
+          data: [44, 55, 41, 37, 22],
+          color: "#7030A0",
+        },
+        {
+          name: "Tank Picture",
+          data: [12, 17, 11, 9, 15],
+          color: "#ED7D31",
+        },
+        {
+          name: "Bucket Slope",
+          data: [9, 7, 5, 8, 6],
+          color: "#FF0000",
+        },
+      ],
+      "H Bal": [
+        {
+          name: "Marine Sprite",
+          data: [44, 55, 41, 37, 22],
+          color: "#00B050",
+        },
+        {
+          name: "Striking Calf",
+          data: [53, 32, 33, 52, 13],
+          color: "#7030A0",
+        },
+        {
+          name: "Tank Picture",
+          data: [12, 17, 11, 9, 15],
+          color: "#ED7D31",
+        },
+        {
+          name: "Bucket Slope",
+          data: [9, 7, 5, 8, 6],
+          color: "#FF0000",
+        },
+      ],
+    },
     options: {
       chart: {
         type: "bar",
@@ -54,7 +143,7 @@ const AllocationStackedBarChart: React.FC = () => {
         text: "",
       },
       xaxis: {
-         categories: ["","","","",""],
+        categories: ["", "", "", "", ""],
       },
       tooltip: {
         y: {
@@ -130,7 +219,7 @@ const AllocationStackedBarChart: React.FC = () => {
       {/* <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
       <ReactApexChart
         options={state.options as any}
-        series={state.series}
+        series={state.series[props.selectedSegment]}
         type="bar"
         height={350}
       />
