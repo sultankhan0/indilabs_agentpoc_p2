@@ -196,7 +196,7 @@ const AllocationEngine = () => {
       setImpact_analysis(res.data?.impact_analysis);
       setLoader(false);
 
-      //
+      
       // scatter Chart data
       const resolveRates = res.data.allocations.map(
         (obj: { resolve_rate: any }) => obj.resolve_rate
