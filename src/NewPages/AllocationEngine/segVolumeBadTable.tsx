@@ -2,10 +2,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 
+type Props = {
+  showButtons?: any
+  
+};
 
-const SegVolumeBadTable: React.FC = () => {
+function SegVolumeBadTable(props:Props) {
 
-  const [activeData, setActiveData] = useState(1);
+  const [activeData, setActiveData] = useState(0);
+  const {showButtons} = props
 
   const tableData = [
     {
@@ -41,7 +46,11 @@ const SegVolumeBadTable: React.FC = () => {
     
   ];
 
-
+const onClickButtons = (id:number,segment:string) =>{
+  setActiveData(id)
+  showButtons(id)
+  // localStorage.setItem('segment', JSON.stringify(segment));
+}
 
 
 
@@ -57,7 +66,9 @@ const SegVolumeBadTable: React.FC = () => {
       </thead>
       <tbody className="w-full">
         {tableData.map(each=>(
-          <tr onClick={()=>{setActiveData(each.id)}}
+          <tr onClick={()=>{onClickButtons(each.id,each.segment)
+            
+          }}
           // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
           className={` text-center font-['calibri' !important] font-[400] text-[18px] border-b-2 text-[#000000]  ${
             each.id === activeData &&

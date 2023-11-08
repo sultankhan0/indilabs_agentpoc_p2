@@ -38,7 +38,9 @@ import { ResponsiveContainer } from "recharts";
 // const CUSTOM_LEGEND_COLORS = ["black", "black", "black"];
 
 const InhouseXX = () => {
-  const [b1, setB1] = useState(true);
+  const [buttons, setButtons] = useState(0);
+  const [reviewBtn,setReviewBtn] = useState(false)
+  const [optimizeBtn,setOptimizeBtn] = useState(false)
   const [b2, setB2] = useState(false);
   const [selectedCity, setSelectedCity] = useState("pune");
   const [activeBucket, setActiveBucket] = useState("b1");
@@ -192,7 +194,17 @@ const InhouseXX = () => {
   console.log("allocationData", allocationData);
 
   const navigateToReviewPerformance = () =>{
+    setReviewBtn(true)
     navigate('/strategy/allocationEngine/reviewPerformance')
+  }
+
+  const onClickOptimizeStrategy = () =>{
+    setOptimizeBtn(true)
+  }
+
+
+  const showButtons = (num:number) =>{
+    setButtons(num)
   }
 
   return (
@@ -370,21 +382,21 @@ const InhouseXX = () => {
 
           <div className="flex gap-5">
              <AllocationButtons/>
-              <SegVolumeBadTable />
+              <SegVolumeBadTable showButtons={showButtons} />
               <AllocationStackedBarChart/>
           </div>
         </>
 
-        <div className="self-end mt-3">
+        {(buttons>0) &&<div className="self-end mt-3">
           <button
           onClick={navigateToReviewPerformance} 
-          className="self-end bg-[#DED6FF] border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3">
+          className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${reviewBtn && 'bg-[#DED6FF]'}`}>
             Review Performance
           </button>
-          <button className="self-end bg-[#DED6FF] border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md">
+          <button onClick={onClickOptimizeStrategy} className={`self-end border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md ${optimizeBtn && 'bg-[#DED6FF]'}`}>
            Optimize Strategy
           </button>
-        </div>
+        </div>}
       </div>
     </div>
   );

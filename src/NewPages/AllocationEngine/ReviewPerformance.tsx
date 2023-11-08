@@ -9,6 +9,8 @@ import TestId from "./TestId";
 import Treatment from "./Treatments";
 import SequenceAttributes from "./SequenceAttributes";
 
+// let seg: any = ''
+
 const ReviewPerformance: React.FC = () => {
   const [activeBucket, setActiveBucket] = useState("b1");
   const [showTestIdComp, setShowTestIdComp] = useState(false);
@@ -39,6 +41,10 @@ const ReviewPerformance: React.FC = () => {
   const showTestIdComponent = () =>{
     setShowTestIdComp(true)
   }
+
+  // useEffect(()=>{
+  //    seg = localStorage.getItem('segment')
+  // })
 
   return (
     <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">

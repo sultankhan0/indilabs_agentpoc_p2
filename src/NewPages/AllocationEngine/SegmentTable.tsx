@@ -8,13 +8,14 @@ import ReactApexChart from "react-apexcharts";
 type Props = {
   showTestIdComponent?:any
   showTestIdCompo?:any
+  segmentData?:any
 };
 
 function SegmentTable(props: Props) {
   const [activeData, setActiveData] = useState(1);
   
 
-  const {showTestIdComponent,showTestIdCompo} = props
+  const {showTestIdComponent,showTestIdCompo,segmentData} = props
 
   const tableData = [
     {
@@ -228,12 +229,13 @@ function SegmentTable(props: Props) {
             </th>
             <th className="font-['calibri' !important] font-[400] text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
-              <button className=" w-[100px] border-2 rounded bg-violet-300 flex items-center justify-center gap-2">
-                MR{" "}
-                <span>
-                  <AiOutlineDown />
-                </span>
-              </button>
+              <select defaultValue={segmentData} className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2">
+                <option>VHR</option>
+                <option>HR</option>
+                <option>MR</option>
+                <option>LR</option>
+                <option>H Bal</option>
+              </select>
             </th>
           </tr>
         </thead>
