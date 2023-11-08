@@ -3,7 +3,7 @@ import React from "react";
 const Treatment = () => {
   return (
 <>
-<div className="">
+<div className=" flex flex-col">
 <div className="h-[385px] table_wrapper bg-white w-300 p-4 rounded-xl mb-5 ">
       <table className="w-300 table-auto ">
         <thead>
@@ -59,7 +59,9 @@ const Treatment = () => {
         </tbody>
       </table>
     </div>
+    <button type="button" className="w-[90px] font-[500] rounded-md pt-1 pb-1 bg-violet-300 border text-[13px] font-['calibri' !important] self-end -mt-4">Update</button>
 </div>
+
 </>
   );
 };

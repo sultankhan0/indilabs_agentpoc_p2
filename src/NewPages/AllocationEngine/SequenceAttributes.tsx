@@ -6,6 +6,7 @@ const SequenceAttributes: React.FC = () => {
 
 
   return (
+   <div className="flex flex-col">
     <div id="chart" className=" flex flex-col bg-white border-2 p-3 rounded-xl gap-3">
        <div className="flex items-center gap-10">
           <p className="w-[70px] text-[19px] font-['calibri' !important] text-[#000000] font-[400]">Sequence</p>
@@ -75,7 +76,9 @@ const SequenceAttributes: React.FC = () => {
              <button type="button" className=" border-2 rounded-md  text-black font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">Regl</button>
           </div>
        </div>
-    </div>    
+    </div> 
+    <button type="button" className="w-[90px] rounded-md font-[500] pt-1 pb-1 bg-violet-300 border text-[13px] font-['calibri' !important] self-end mt-1">Apply</button>
+    </div>   
   );
 };
 

@@ -54,7 +54,7 @@ const AllocationStackedBarChart: React.FC = () => {
         text: "",
       },
       xaxis: {
-        categories: [2008, 2009, 2010, 2011, 2012],
+         categories: ["","","","",""],
       },
       tooltip: {
         y: {

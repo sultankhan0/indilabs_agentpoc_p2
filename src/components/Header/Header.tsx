@@ -54,7 +54,7 @@ const Header = (props: Props) => {
     <>
       <div className="w-full flex bg-neutral-50 justify-between items-center  mainHeaderWrapper">
         <h1
-          className={`text-3xl font-bold px-1 py-2 ${
+          className={`text-3xl font-[500] font-['calibri' !important] px-1 py-2 ${
             location.pathname !== "/home" &&
             location.pathname !== "/strategy" &&
             location.pathname !== "/strategy/optimization" &&
