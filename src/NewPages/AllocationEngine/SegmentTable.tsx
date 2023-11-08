@@ -8,7 +8,7 @@ import ReactApexChart from "react-apexcharts";
 type Props = {
   showTestIdComponent?:any
   showTestIdCompo?:any
-  segmentData?:any
+  segmentData?:string
 };
 
 function SegmentTable(props: Props) {
@@ -177,6 +177,8 @@ function SegmentTable(props: Props) {
     showTestIdComponent()
   }
 
+  
+
   return (
     // <div>
     //   <table className="w-300 table-auto">
@@ -221,7 +223,7 @@ function SegmentTable(props: Props) {
       <table className="w-[100%] border" cellPadding={10}>
         <thead>
           <tr>
-            <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border">
+            <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border text-start">
               Segment
             </th>
             <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border">
@@ -229,12 +231,12 @@ function SegmentTable(props: Props) {
             </th>
             <th className="font-['calibri' !important] font-[400] text-[20px] border flex items-center gap-3">
               <p>Treatments</p>
-              <select defaultValue={segmentData} className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2">
-                <option>VHR</option>
-                <option>HR</option>
-                <option>MR</option>
-                <option>LR</option>
-                <option>H Bal</option>
+              <select defaultValue={segmentData}  className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2">
+                <option value="VHR">VHR</option>
+                <option value="HR">HR</option>
+                <option value="MR">MR</option>
+                <option value="LR">LR</option>
+                <option value="H Bal">H Bal</option>
               </select>
             </th>
           </tr>
@@ -267,7 +269,7 @@ function SegmentTable(props: Props) {
                 // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
                 className="text-center font-[calibri] font-[500] text-[19px] border-2"
               >
-                <td className="border">{each.segment}</td>
+                <td className="border text-start">{each.segment}</td>
                 <td className="border">{each.volume}</td>
                 <td className="border">
                   <div className="bg-slate-400 w-full flex h-full">
