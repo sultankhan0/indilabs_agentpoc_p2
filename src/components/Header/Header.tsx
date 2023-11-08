@@ -30,7 +30,7 @@ const Header = (props: Props) => {
     } else if (pathName === "/data") {
       setPageName("Data");
     } else if (pathName === "/strategy/allocationEngine") {
-      setPageName("Allocation Engine");
+      setPageName("Allocation Strategy");
     } else if (pathName === "/strategy/changeControl") {
       setPageName("Change Control");
     } else if (pathName === "/strategy/optimization") {
@@ -54,7 +54,7 @@ const Header = (props: Props) => {
     <>
       <div className="w-full flex bg-neutral-50 justify-between items-center  mainHeaderWrapper">
         <h1
-          className={`text-3xl font-[500] font-['calibri' !important] px-1 py-2 ${
+          className={`text-3xl font-['calibri' !important] px-1 py-2 ${location.pathname==="/strategy/allocationEngine" ? 'font-[400]': 'font-[500]'} ${
             location.pathname !== "/home" &&
             location.pathname !== "/strategy" &&
             location.pathname !== "/strategy/optimization" &&

@@ -49,7 +49,7 @@ function SegVolumeBadTable(props:Props) {
 const onClickButtons = (id:number,segment:string) =>{
   setActiveData(id)
   showButtons(id)
-  // localStorage.setItem('segment', JSON.stringify(segment));
+  localStorage.setItem('segment', JSON.stringify(segment));
 }
 
 

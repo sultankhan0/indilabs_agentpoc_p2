@@ -11,10 +11,20 @@ import SequenceAttributes from "./SequenceAttributes";
 
 // let seg: any = ''
 
+const getSegmentFromLocalStorage = () =>{
+  const segValue = localStorage.getItem('segment')
+  if (segValue === undefined || segValue === null){
+    return 'VHR'
+}else {
+  return JSON.parse(segValue)
+}
+}
+
 const ReviewPerformance: React.FC = () => {
   const [activeBucket, setActiveBucket] = useState("b1");
   const [showTestIdComp, setShowTestIdComp] = useState(false);
   const [showSequenceCond, setShowSequenceCond] = useState(false);
+  const [segmentValue,setSegmentValue] = useState(getSegmentFromLocalStorage())
 
   const BGroups = [
     { id: "b1", label: "B1" },
@@ -42,13 +52,12 @@ const ReviewPerformance: React.FC = () => {
     setShowTestIdComp(true)
   }
 
-  // useEffect(()=>{
-  //    seg = localStorage.getItem('segment')
-  // })
+  
 
   return (
     <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
       <div className="w-[95%] flex items-center justify-between ml-6">
+        <div className="flex gap-5">
         <div className=" flex justify-between  rounded-xl B1TabsContain">
           {BGroups.map((button, index) => (
             <div
@@ -64,7 +73,11 @@ const ReviewPerformance: React.FC = () => {
             </div>
           ))}
         </div>
-
+        {showTestIdComp && <div className="flex items-center gap-3">
+          <p className="text-[22px]">Treatments</p>
+          <button type="button" className="text-[21px] border bg-[#3D5EB8] text-white pl-3 pr-3 rounded-md">{segmentValue}</button>
+        </div>}
+        </div>
         <div className="flex items-center gap-1">
           <button
             type="button"
@@ -99,7 +112,7 @@ const ReviewPerformance: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <SegmentTable showTestIdComponent={showTestIdComponent} showTestIdCompo={showTestIdComp} />
+        <SegmentTable showTestIdComponent={showTestIdComponent} showTestIdCompo={showTestIdComp} segmentData ={segmentValue} />
         {/* <div className="w-[95%] flex items-center ml-6">
           <div className="w-[20%] flex items-center gap-1 border-2 ">
             <HiPlus className="text-violet-800" size={35} />
