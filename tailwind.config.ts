@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#6750A4",
-        'black-rgba':"rgb(90, 216, 166)"
+        "black-rgba": "rgb(90, 216, 166)",
       },
       spacing: {
         164: "164px",
@@ -23,7 +23,3 @@ module.exports = {
   },
   plugins: [require("flowbite/plugin")],
 };
-
-
-
-

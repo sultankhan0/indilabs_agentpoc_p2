@@ -278,7 +278,7 @@ function SegmentTable(props: Props) {
             }) => (
               <tr
                 // className="text-center font-[calibri] font-[500] text-[19px] border-b-2"
-                className="text-center font-[calibri] font-[500] text-[19px] border-2"
+                className="text-center font-['calibri' !important] font-[400] text-[18px] border-2"
               >
                 <td className="border text-start">{each.segment}</td>
                 <td className="border">{each.volume}</td>
