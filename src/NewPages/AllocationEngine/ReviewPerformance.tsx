@@ -9,7 +9,7 @@ import TestId from "./TestId";
 import Treatment from "./Treatments";
 import SequenceAttributes from "./SequenceAttributes";
 
-// let seg: any = ''
+
 
 const getSegmentFromLocalStorage = () =>{
   const segValue = localStorage.getItem('segment')
