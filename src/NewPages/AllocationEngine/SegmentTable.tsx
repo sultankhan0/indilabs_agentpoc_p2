@@ -231,7 +231,7 @@ function SegmentTable(props: Props) {
       <table className="w-[100%] border" cellPadding={10}>
         <thead>
           <tr>
-            <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border text-start">
+            <th className="w-[10%] font-['calibri' !important] font-[400] text-[16px] border text-start">
               Segment
             </th>
             <th className="w-[10%] font-['calibri' !important] font-[500] text-[20px] border">
