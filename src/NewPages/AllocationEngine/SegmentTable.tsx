@@ -241,7 +241,7 @@ function SegmentTable(props: Props) {
               <p>Treatments</p>
               <select
                 defaultValue={segmentData}
-                className="pl-1 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2"
+                className="w-[100px] pl-3 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2"
               >
                 <option value="VHR">VHR</option>
                 <option value="HR">HR</option>
@@ -371,7 +371,7 @@ function SegmentTable(props: Props) {
           )}
           <tr className="text-center font-[calibri] font-[500] text-[19px] border-2">
             <td className="border" colSpan={2}>
-              <div className="w-full flex items-center gap-1 border-2 ">
+              <div className="w-full flex items-center gap-1  ">
                 <HiPlus className="text-violet-800" size={35} />
                 <button
                   onClick={onClickShowTestIdComp}

@@ -8,9 +8,9 @@ const TestPipeLine: React.FC = () => {
         <h1 className="text-[16px] font-['calibri' !important] text-[#000000] font-[500]">Test Pipeline</h1>
        <table className="-ml-3" cellPadding={15}>
       <thead >
-        <tr >
+        <tr  className="">
             <th className="text-[16px] font-[500] text-start font-['calibri' !important] text-[#000000] ">Test ID</th>
-            <th className="text-[16px] font-[500] text-start font-['calibri' !important] text-[#000000] text-center ">Start</th>
+            <th className="text-[16px] font-[500] text-start font-['calibri' !important] text-[#000000] ">Start</th>
             <th className="text-[16px] font-[500] text-start font-['calibri' !important] text-[#000000] ">Volume</th>
             <th className="text-[16px] font-[500] text-start font-['calibri' !important] text-[#000000] ">KPI 1</th>
         </tr>

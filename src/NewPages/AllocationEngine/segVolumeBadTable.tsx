@@ -77,7 +77,7 @@ function SegVolumeBadTable(props: Props) {
                 each.id === activeData && ` bg-[#DED6FF]`
               } cursor-pointer `}
             >
-              <td>{each.segment}</td>
+              <td className="">{each.segment}</td>
               <td>{each.volume}</td>
               <td>{each.Bad}</td>
             </tr>
