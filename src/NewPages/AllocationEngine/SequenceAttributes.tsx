@@ -6,7 +6,7 @@ const SequenceAttributes: React.FC = () => {
 
 
   return (
-   <div className="flex flex-col">
+   <div className="min-w-[280px] flex flex-col overflow-x-auto">
     <div id="chart" className=" flex flex-col bg-white border-2 p-3 rounded-xl gap-3">
        <div className="flex items-center gap-10">
           <p className="w-[70px] text-[19px] font-['calibri' !important] text-[#000000] font-[400]">Sequence</p>

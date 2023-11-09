@@ -378,7 +378,7 @@ const InhouseXX = () => {
             </div>
           </div>
 
-          <div className="flex gap-5">
+          <div className="w-[100%] flex gap-5 flex-wrap xl:flex-nowrap">
             <AllocationButtons />
             <SegVolumeBadTable
               showButtons={showButtons}
@@ -389,7 +389,7 @@ const InhouseXX = () => {
         </>
 
         {buttons > 0 && (
-          <div className="self-end mt-3">
+          <div className="self-end mt-3 flex justify-center gap-2 flex-wrap">
             <button
               onClick={navigateToReviewPerformance}
               className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${

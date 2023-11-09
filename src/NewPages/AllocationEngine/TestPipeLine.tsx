@@ -4,7 +4,7 @@ import React from "react";
 
 const TestPipeLine: React.FC = () => {
   return (
-    <div className="w-[33%] bg-white rounded-xl p-3 ml-2 border-2">
+    <div className="min-w-[280px] w-[100%] md:w-[47%] xl:w-[33%] bg-white rounded-xl p-3 lg:ml-2 border-2 overflow-x-auto">
         <h1 className="text-[18px] mt-2 font-['calibri' !important] text-[#000000] font-[400]">Test Pipeline</h1>
        <table className="-ml-3" cellPadding={15}>
       <thead >

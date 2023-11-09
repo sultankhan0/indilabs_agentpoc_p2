@@ -51,7 +51,7 @@ function SegVolumeBadTable(props: Props) {
   };
 
   return (
-    <div className="w-[30%] bg-white rounded-xl border-2 ml-5">
+    <div className="min-w-[300px] w-[70%] md:w-[75%]  xl:w-[25%] bg-white rounded-xl border-2 lg:ml-5 overflow-x-auto">
       <table className="w-full" cellPadding={20}>
         <thead>
           <tr>
