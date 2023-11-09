@@ -178,12 +178,12 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div id="chart" className="w-[60%] bg-white border-2 p-3 rounded-xl">
-      <div className="flex justify-between items-center ml-3 mr-5">
-        <h1 className="text-[18px] font-['calibri' !important] font-[400] ">
+    <div id="chart" className="min-w-[300px] w-[100%]  xl:w-[53%] 2xl:w-[60%] bg-white border-2 p-3 rounded-xl overflow-x-auto">
+      <div className="flex justify-between items-start ml-3 mr-5">
+        <h1 className="text-[18px] font-['calibri' !important] font-[400] mr-2 ">
           Treatments
         </h1>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 flex-wrap">
           <button
             type="button"
             className="text-[#7F7F7F] font-['calibri' !important] border-[#D9D9D9]  border-2 pl-3 pr-3 rounded"

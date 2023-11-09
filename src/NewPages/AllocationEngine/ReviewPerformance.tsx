@@ -56,9 +56,9 @@ const ReviewPerformance: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
-      <div className="w-[95%] flex items-center justify-between ml-6">
-        <div className="flex gap-5">
-        <div className=" flex justify-between  rounded-xl B1TabsContain">
+      <div className="w-[95%] flex items-center gap-2 justify-between ml-6 flex-wrap">
+        <div className=" flex gap-5 flex-wrap">
+        <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">
           {BGroups.map((button, index) => (
             <div
               key={button.id}
@@ -73,12 +73,12 @@ const ReviewPerformance: React.FC = () => {
             </div>
           ))}
         </div>
-        {showTestIdComp && <div className="flex items-center gap-3">
+        {showTestIdComp && <div className=" flex items-center gap-3">
           <p className="text-[22px]">Treatments</p>
-          <button type="button" className="text-[21px] border bg-[#3D5EB8] text-white pl-3 pr-3 rounded-md">{segmentValue}</button>
+          <button type="button" className="text-[21px] border bg-[#3D5EB8] mb-3 text-white pl-3 pr-3 rounded-md lg:mb-0">{segmentValue}</button>
         </div>}
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 flex-wrap">
           <button
             type="button"
             className="text-gray-500 border-2 pl-3 pr-3 rounded"
@@ -141,14 +141,14 @@ const ReviewPerformance: React.FC = () => {
         </div> */}
       </div>
       {!showTestIdComp && (
-        <div className=" flex gap-2 ml-4">
+        <div className=" flex -ml-2 gap-2 xl:ml-4 flex-wrap">
           <TestPipeLine />
           <Performance />
           <PLImpactChart />
         </div>
       )}
       {showTestIdComp && (
-        <div className="flex gap-6 ml-5">
+        <div className="flex gap-6 ml-5 flex-wrap">
           <div className="flex flex-col gap-2">
             <TestId showSequence={showSequence} />
             {showSequenceCond && <SequenceAttributes />}

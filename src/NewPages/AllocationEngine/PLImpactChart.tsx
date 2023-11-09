@@ -29,7 +29,7 @@ const PLImpactChart: React.FC = () =>{
 
 
 return(
- <div className="w-[27%] flex flex-col items-start gap-10 p-2 bg-white border-2 rounded-xl">
+ <div className="min-w-[280px] w-[100%] md:w-[47%] xl:w-[27%] flex flex-col items-start gap-10 p-2 bg-white border-2 rounded-xl overflow-x-auto">
     <h1 className="ml-5 text-[19px] font-['calibri' !important] text-[#000000] font-[400]">P&L Impact (Incremental)</h1>
   <BarChart
     width={350}
