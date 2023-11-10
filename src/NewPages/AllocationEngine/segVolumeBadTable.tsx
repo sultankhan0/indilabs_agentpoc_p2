@@ -45,7 +45,7 @@ function SegVolumeBadTable(props: Props) {
 
   const onClickButtons = (id: number, segment: string) => {
     if(segment === "MR"){
-    props.setSelectedSegment(segment);
+    props.setSelectedSegment('MR');
     }else{
       props.setSelectedSegment('VHR');
     }

@@ -106,6 +106,10 @@ function App() {
             element={<ReviewPerformance />}
           />
           <Route
+            path="/strategy/allocationEngine/optimizeStrategy"
+            element={<ReviewPerformance />}
+          />
+          <Route
             path="/strategy/allocationEngine"
             element={<AllocationEngine />}
           />
