@@ -1,6 +1,4 @@
 import React from "react";
-// import Sidebar from "../../components/common/Sidebar";
-
 
 const TestPipeLine: React.FC = () => {
   return (
