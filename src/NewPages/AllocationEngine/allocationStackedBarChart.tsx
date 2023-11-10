@@ -175,13 +175,13 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
     if (menuIcon) {
       menuIcon.style.display = "none";
     }
-  }, []);
+  });
 
   return (
     <div id="chart" className="min-w-[300px] w-[100%]  xl:w-[53%] 2xl:w-[60%] bg-white border-2 p-3 rounded-xl overflow-x-auto">
       <div className="flex justify-between items-start ml-3 mr-5">
         <h1 className="text-[18px] font-['calibri' !important] font-[400] mr-2 ">
-          Treatments
+          Treatments {props.selectedSegment==='MR' && <span className="border-2 bg-violet-300 rounded-md ml-2 pl-2 pr-2">MR</span>}
         </h1>
         <div className="flex items-center gap-1 flex-wrap">
           <button
@@ -216,13 +216,33 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           </button>
         </div>
       </div>
-      {/* <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
+      <div className="w-[100%] flex items-start justify-start">
+        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[30%] mt-10">
+           <tbody>
+            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+              <td>Champion</td>
+              <td>80%</td>
+            </tr>
+            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+              <td>Challenger 1</td>
+              <td>10%</td>
+            </tr>
+            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+              <td>Challenger 2</td>
+              <td>10%</td>
+            </tr>
+           </tbody>
+        </table>}
+        <div className={`-ml-4 ${props.selectedSegment==='MR'? 'w-[70%]':"w-[100%]"} `}>
       <ReactApexChart
         options={state.options as any}
         series={state.series[props.selectedSegment]}
         type="bar"
         height={350}
+        
       />
+      </div>
+      </div>
     </div>
   );
 };

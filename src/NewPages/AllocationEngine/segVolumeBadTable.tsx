@@ -44,7 +44,11 @@ function SegVolumeBadTable(props: Props) {
   ];
 
   const onClickButtons = (id: number, segment: string) => {
+    if(segment === "MR"){
     props.setSelectedSegment(segment);
+    }else{
+      props.setSelectedSegment('VHR');
+    }
     setActiveData(id);
     showButtons(id);
     localStorage.setItem("segment", JSON.stringify(segment));

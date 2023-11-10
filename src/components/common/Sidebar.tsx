@@ -371,7 +371,7 @@ const Sidebar: FC<SidebarProps> = ({ layout }) => {
                       {StrategyDropdown && data.title === "strategy" && (
                         
                         <div>
-                             <Link
+                             {/* <Link
                         //to ={"/strategy"}
                         to='#'
                         className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
@@ -451,9 +451,9 @@ const Sidebar: FC<SidebarProps> = ({ layout }) => {
                             </Link>
                           </div>
                         </div>
-                      )}
+                      )} */}
 
-                       <Link
+                       {/* <Link
                         //to ={"/strategy"}
                         to={"/" + data?.title}
                         className={`flex items-center w-[167px]  mx-3 my-3 h-11 pl-3 pr-4 py-3  justify-start gap-3  ${
@@ -561,7 +561,29 @@ const Sidebar: FC<SidebarProps> = ({ layout }) => {
                         
                           </div>
                         </div>
-                      )}
+                      )} */}
+
+                           <Link
+                              to={"/strategy/allocationEngine"}
+                              className={`flex gap-2 items-center px-2  mt-2 w-[150px] ${
+                                location.pathname === "/strategy/allocationEngine"
+                                  ? "bg-white bg-opacity-30 rounded-lg h-9"
+                                  : ""
+                              }`}
+                            >
+                              <img src={ArrowCircle} alt="" className="h-4" />
+                              <p className="mb-1 text-white">Agency</p>
+                              {location.pathname ===
+                                "/strategy/allocationEngine" && (
+                                <div
+                                  className="h-9 w-[7px] bg-white rounded-tl-xl rounded-bl-xl "
+                                  style={{
+                                    position: "absolute",
+                                    right: "0px",
+                                  }}
+                                ></div>
+                              )}
+                            </Link>
 
 
                     </div>

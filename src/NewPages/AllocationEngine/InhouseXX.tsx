@@ -193,12 +193,12 @@ const InhouseXX = () => {
   console.log("allocationData", allocationData);
 
   const navigateToReviewPerformance = () => {
-    setReviewBtn(true);
+    setOptimizeBtn(true);
     navigate("/strategy/allocationEngine/reviewPerformance");
   };
 
-  const onClickOptimizeStrategy = () => {
-    setOptimizeBtn(true);
+  const onClickReviewPerformance = () => {
+    setReviewBtn(true);
   };
 
   const showButtons = (num: number) => {
@@ -391,7 +391,7 @@ const InhouseXX = () => {
         {buttons > 0 && (
           <div className="self-end mt-3 flex justify-center gap-2 flex-wrap">
             <button
-              onClick={navigateToReviewPerformance}
+              onClick={onClickReviewPerformance}
               className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${
                 reviewBtn && "bg-[#DED6FF]"
               }`}
@@ -399,7 +399,7 @@ const InhouseXX = () => {
               Review Performance
             </button>
             <button
-              onClick={onClickOptimizeStrategy}
+              onClick={navigateToReviewPerformance}
               className={`self-end border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md ${
                 optimizeBtn && "bg-[#DED6FF]"
               }`}

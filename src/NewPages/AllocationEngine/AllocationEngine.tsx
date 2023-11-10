@@ -19,6 +19,8 @@ import "./Allocation.scss";
 import { ResponsiveContainer } from "recharts";
 import AllocationButtons from "./AllocationButtons";
 
+import { useNavigate } from "react-router-dom";
+
 declare module "recharts" {
   interface RadialBarProps {
     minAngle?: number;
@@ -53,6 +55,8 @@ const AllocationEngine = () => {
   const [maxAllocationData, setMaxAllocationData] = useState<number>();
   const [minAllocationData, setMinAllocationData] = useState<number>();
   const [resultArrayList, setResultArrayList] = useState<number[]>([]);
+
+  const navigate = useNavigate();
 
   const cities = [
     { id: "pune", name: "PUN" },
@@ -253,6 +257,14 @@ const AllocationEngine = () => {
   };
 
   console.log("allocationData", allocationData);
+
+  const navigateToReviewConstraints = () =>{
+    navigate('/reviewConstraints')
+  }
+
+  const navigateToChangeControl = () =>{
+    navigate('/execution')
+  }
 
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper  relative">
@@ -949,7 +961,10 @@ const AllocationEngine = () => {
           </>
         ) : null} */}
         <div className="self-end mt-3">
-          <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
+        <button onClick={navigateToReviewConstraints}  className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-2">
+            Review Constraints
+          </button>
+          <button onClick={navigateToChangeControl} className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
             Submit Changes
           </button>
           <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">

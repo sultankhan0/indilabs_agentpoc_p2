@@ -4,6 +4,8 @@ import { Fragment } from "react";
 import shiftGreen from "../../assets/icons/shift-green.svg";
 import { RxTriangleDown } from 'react-icons/rx';
 import './strategy.scss'
+import { useNavigate } from "react-router-dom";
+
 
 const Controls = () => {
   const [defaultData, setDefaultData] = useState(true);
@@ -14,10 +16,16 @@ const Controls = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [changeRequest, setChangeRequest] = useState(false);
 
+  const navigate = useNavigate();
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
   console.log(placementCriteria);
+
+  const navigateToAllocationPage = () =>{
+    navigate('/AllocationEngine')
+  }
 
   return (
     <div>
@@ -696,7 +704,7 @@ const Controls = () => {
         <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
           Run Optimization
         </button>
-        <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
+        <button onClick={navigateToAllocationPage} className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">
           Review Allocations
         </button>
       </div>

@@ -14,16 +14,31 @@ const data = [
   {
     name: "Page E",
     uv: -1890,
-    pv: 4800,
+    pv: 6200,
     amt: 2181
   },
   {
     name: "Page F",
-    uv: 2390,
-    pv: -3800,
+    uv: -2300,
+    pv: 4090,
     amt: 2500
   },
 ];
+
+const CustomBar = (props:any) => {
+  const { x, y, width, height, fill, color } = props;
+
+  const cornerRadius = color === "#00B050" && "#FF0000" ? 15 : 0;
+
+  let path = `M${x},${y + height}`;
+  path += `v${-height + cornerRadius}`;
+  path += `a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},${-cornerRadius}`;
+  path += `h${width - 2 * cornerRadius}`;
+  path += `a${cornerRadius},${cornerRadius} 0 0 1 ${cornerRadius},${cornerRadius}`;
+  path += `v${height - cornerRadius}`;
+
+  return <path d={path} fill={fill} />;
+};
 
 const PLImpactChart: React.FC = () =>{ 
 
@@ -50,8 +65,8 @@ return(
     <Tooltip />
     {/* <Legend /> */}
     <ReferenceLine y={0} stroke="#000" />
-    <Bar dataKey="pv" fill="green" stackId="stack" />
-    <Bar dataKey="uv" fill="red" stackId="stack" />
+    <Bar dataKey="pv" fill="#00B050" stackId="stack" shape={<CustomBar color="#00B050" />} />
+    <Bar dataKey="uv" fill="#FF0000" stackId="stack" shape={<CustomBar color="#FF0000" />}  />
   </BarChart>
   </div>
 )

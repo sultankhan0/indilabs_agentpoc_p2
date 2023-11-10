@@ -22,12 +22,12 @@ const AllocationButtons: React.FC = () => {
 
 
   return (
-    <div className="ml-5 flex flex-col gap-11">
+    <div className="ml-5 flex flex-col gap-7">
        {Buttons.map((button, index) => (
                 <button
                   key={button.id}
                   onClick={() => handleButtonClick(button.id)}
-                  className={`w-[120px] font-medium text-[21px] text-[#7f7f7f] font-['calibri' !important] border-2 border-[#BFBFBF] rounded-md pt-2 pb-2 cursor-pointer ${
+                  className={`w-[130px] font-medium text-[21px] text-[#7f7f7f] font-['calibri' !important] border-2 border-[#BFBFBF] rounded-md pt-3 pb-3 cursor-pointer ${
                     activeButton === button.id
                       ? " bg-[#DED6FF] text-[#404040] "
                       : "bg-transparent"  

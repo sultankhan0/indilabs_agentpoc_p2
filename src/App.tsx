@@ -97,7 +97,9 @@ function App() {
           <Route path="/home/collection" element={<CollectionDashboar />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/diagnostics" element={<Diagnostics />} />
-          <Route path="/strategy" element={<Strategy />} />
+          <Route path="/reviewConstraints" element={<Strategy />} />
+          {/* <Route path="/strategy" element={<Strategy />} /> */}
+          <Route path="/strategy" element={<InhouseXX />} />
           <Route path="/strategy/optimization" element={<Strategy />} />
           <Route
             path="/strategy/allocationEngine/reviewPerformance"

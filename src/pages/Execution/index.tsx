@@ -4,7 +4,16 @@ import ChangeProposal from "./changeProposal";
 import ApprovalHeirarchy from "./aprovalHierarchy";
 import ChangeControlTabs from "./changeControlTabs";
 
+import { useNavigate } from "react-router-dom";
+
 const Strategy: React.FC = () => {
+ 
+  const navigate = useNavigate();
+ 
+  const navigateToAllocation = () =>{
+    navigate('/allocationEngine')
+  }
+
   return (
     <div className="flex flex-col border-2 border-gray-200  rounded-xl p-3 ml-4">
       <ChangeControlTabs/>
@@ -12,8 +21,8 @@ const Strategy: React.FC = () => {
       <ChangeProposal/>
       <ApprovalHeirarchy/>
       </div>
-      <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-4 mt-3">
-            View All
+      <button onClick={navigateToAllocation}  className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-4 mt-3">
+            Return to Allocation
         </button>
     </div>
   );
