@@ -39,6 +39,11 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       ],
       HR: [
         {
+          name: "Bucket Slope",
+          data: [0, 0, 0, 0, 0],
+          color: "#ffffff",
+        },
+        {
           name: "Marine Sprite",
           data: [53, 32, 33, 52, 13],
           color: "#00B050",
@@ -61,23 +66,28 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       ],
       MR: [
         {
+          name: "Bucket Slope",
+          data: [0, 0, 0, 0, 0],
+          color: "#ffffff",
+        },
+        {
           name: "Marine Sprite",
-          data: [44, 55, 41, 37, 22],
+          data: [44, 55, 0, 0, 0],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [53, 32, 33, 52, 13],
+          data: [53, 32, 33, 0, 0],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [12, 17, 11, 9, 15],
+          data: [12, 17, 11, 0, 0],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 8, 6],
+          data: [9, 7, 5, 0, 0],
           color: "#FF0000",
         },
       ],
@@ -105,6 +115,11 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       // ],
       LR: [
         {
+          name: "Bucket Slope",
+          data: [0, 0, 0, 0, 0],
+          color: "#ffffff",
+        },
+        {
           name: "Marine Sprite",
           data: [12, 17, 11, 9, 15],
           color: "#00B050",
@@ -126,6 +141,11 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         },
       ],
       "H Bal": [
+        {
+          name: "Bucket Slope",
+          data: [0, 0, 0, 0, 0],
+          color: "#ffffff",
+        },
         {
           name: "Marine Sprite",
           data: [44, 55, 41, 37, 22],
@@ -160,7 +180,11 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           horizontal: true,
           // distributed: true,
           dataLabels: {
-            enabled: false, // Disable data labels on bars
+            enabled: true, // Disable data labels on bars
+            style:{
+              colors: ['#000000'],
+              fontSize: "30px",
+            }
           },
         },
       },
