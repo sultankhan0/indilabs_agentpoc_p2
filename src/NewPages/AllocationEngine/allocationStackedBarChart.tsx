@@ -11,25 +11,31 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
     series: {
       VHR: [
         {
+          name: "Bucket Slope",
+          data: [0, 0, 0, 40, 0],
+          color: "#ffffff",
+        },
+        {
           name: "Marine Sprite",
-          data: [44, 55, 41, 37, 22],
+          data: [0, 0, 41, 37, 10],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [53, 32, 33, 52, 13],
+          data: [23, 32, 33, 32, 13],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [12, 17, 11, 9, 15],
+          data: [30, 17, 11, 0, 15],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 8, 6],
+          data: [9, 7, 5, 0, 6],
           color: "#FF0000",
         },
+        
       ],
       HR: [
         {
@@ -160,7 +166,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       },
       stroke: {
         width: 1,
-        colors: ["#fff"],
+        colors: ["#7f7f7f"],
       },
       title: {
         text: "",

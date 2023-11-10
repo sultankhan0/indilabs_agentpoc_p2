@@ -42,10 +42,28 @@ const CustomBar = (props:any) => {
 
 const PLImpactChart: React.FC = () =>{ 
 
+  const chartStyles: React.CSSProperties = {
+    width: "350px",
+    height: "300px",
+    margin: "5px 30px 5px -30px",
+    position: "relative",
+  };
+  const gridStyles: React.CSSProperties = {
+    position: "absolute",
+    top: 0,
+    left: 80,
+    width: "65%",
+    height: "100%",
+    background: "repeating-linear-gradient(to bottom, transparent 0, transparent 65px, #ddd 65px, #ddd 66px)",
+    pointerEvents: "none",
+  };
+
 
 return(
  <div className="min-w-[280px] w-[100%] md:w-[47%] xl:w-[27%] flex flex-col items-start gap-10 p-2 bg-white border-2 rounded-xl overflow-x-auto">
     <h1 className="ml-5 text-[19px] font-['calibri' !important] text-[#000000] font-[400]">P&L Impact (Incremental)</h1>
+    <div style={chartStyles}>
+
   <BarChart
     width={350}
     height={300}
@@ -59,15 +77,19 @@ return(
     }}
     
   >
-    <CartesianGrid strokeDasharray="1 1" />
+     <Bar dataKey="pv" fill="#00B050" stackId="stack" shape={<CustomBar color="#00B050" />} />
+    <Bar dataKey="uv" fill="#FF0000" stackId="stack" radius={[10, 10, 0, 0]}  />
+    <CartesianGrid strokeDasharray="1 1" vertical={false} horizontal={false} />
     {/* <XAxis dataKey="name" /> */}
-    <YAxis />
+    <YAxis ticks={[0]} />
     <Tooltip />
     {/* <Legend /> */}
     <ReferenceLine y={0} stroke="#000" />
-    <Bar dataKey="pv" fill="#00B050" stackId="stack" shape={<CustomBar color="#00B050" />} />
-    <Bar dataKey="uv" fill="#FF0000" stackId="stack" shape={<CustomBar color="#FF0000" />}  />
+
+    {/* <Bar dataKey="uv" fill="#FF0000" stackId="stack" shape={<CustomBar color="#FF0000" />}  /> */}
   </BarChart>
+  <div style={gridStyles}></div>
+  </div>
   </div>
 )
 };
