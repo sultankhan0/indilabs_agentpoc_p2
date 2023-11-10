@@ -7,7 +7,6 @@ import Labels from "../../components/CollectionDashboard/Labels";
 import PieChartComponent from "../../components/PieChart/PieChart";
 import BarChartComponent from "../../components/BarChart/BarChart";
 import LineBarChart from "../../components/LineBarChart/LineBarChart";
-// import Sidebar from "../../components/common/Sidebar";
 import DashboardHeader from "../../components/DshboardHeader/DashboardHeader";
 import Button from "../../components/Button";
 
