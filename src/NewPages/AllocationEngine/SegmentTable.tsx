@@ -7,6 +7,8 @@ import ReactApexChart from "react-apexcharts";
 import { useDispatch, useSelector } from "react-redux";
 import { getPerformanceData } from "../../redux/reducers/ReviewPerformanceReducer/ReviewPerformanceSlice";
 
+import { useLocation } from "react-router-dom";
+
 type Props = {
   showTestIdComponent?: any;
   showTestIdCompo?: any;
@@ -15,6 +17,7 @@ type Props = {
 
 function SegmentTable(props: Props) {
   const [activeData, setActiveData] = useState(1);
+  const location = useLocation();
 
   const { showTestIdComponent, showTestIdCompo, segmentData } = props;
 
@@ -182,6 +185,12 @@ function SegmentTable(props: Props) {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
+
+  useEffect(()=>{
+    if (location.pathname === '/strategy/allocationEngine/optimizeStrategy'){
+      showTestIdComponent()
+    }
+  })
 
   const onClickShowTestIdComp = () => {
     showTestIdComponent();

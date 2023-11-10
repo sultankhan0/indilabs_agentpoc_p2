@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 type Props = {
   selectedSegment: string;
+  
 };
 const AllocationStackedBarChart: React.FC<Props> = (props) => {
   const state: any = {
@@ -65,7 +66,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Tank Picture",
-          data: [44, 55, 41, 37, 22],
+          data: [12, 17, 11, 9, 15],
           color: "#ED7D31",
         },
         {
@@ -74,6 +75,28 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           color: "#FF0000",
         },
       ],
+      // [
+      //   {
+      //     name: "Marine Sprite",
+      //     data: [44, 55, 41, 37, 22],
+      //     color: "#00B050",
+      //   },
+      //   {
+      //     name: "Striking Calf",
+      //     data: [53, 32, 33, 52, 13],
+      //     color: "#7030A0",
+      //   },
+      //   {
+      //     name: "Tank Picture",
+      //     data: [44, 55, 41, 37, 22],
+      //     color: "#ED7D31",
+      //   },
+      //   {
+      //     name: "Bucket Slope",
+      //     data: [9, 7, 5, 8, 6],
+      //     color: "#FF0000",
+      //   },
+      // ],
       LR: [
         {
           name: "Marine Sprite",
