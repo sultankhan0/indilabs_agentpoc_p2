@@ -56,6 +56,8 @@ const AllocationEngine = () => {
   const [minAllocationData, setMinAllocationData] = useState<number>();
   const [resultArrayList, setResultArrayList] = useState<number[]>([]);
 
+  const [activeButton, setActiveButton] = useState("all");
+
   const navigate = useNavigate();
 
   const cities = [
@@ -191,7 +193,7 @@ const AllocationEngine = () => {
     //     ],
     //   },
     // };
-    const res = await GetCityData({ city, bucket });
+    const res = await GetCityData({ city, bucket, activeButton });
 
     if (res.status === 200) {
       setAllocationData(res.data.allocations);
@@ -200,7 +202,6 @@ const AllocationEngine = () => {
       setImpact_analysis(res.data?.impact_analysis);
       setLoader(false);
 
-      
       // scatter Chart data
       const resolveRates = res.data.allocations.map(
         (obj: { resolve_rate: any }) => obj.resolve_rate
@@ -251,20 +252,21 @@ const AllocationEngine = () => {
   };
   useEffect(() => {
     fetchData(selectedCity, activeBucket);
-  }, []);
+  }, [activeButton]);
+
   const Loader = () => {
     return <span className="loader"></span>;
   };
 
   console.log("allocationData", allocationData);
 
-  const navigateToReviewConstraints = () =>{
-    navigate('/reviewConstraints')
-  }
+  const navigateToReviewConstraints = () => {
+    navigate("/reviewConstraints");
+  };
 
-  const navigateToChangeControl = () =>{
-    navigate('/execution')
-  }
+  const navigateToChangeControl = () => {
+    navigate("/execution");
+  };
 
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper  relative">
@@ -441,7 +443,10 @@ const AllocationEngine = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-3">
             <div className="col-span-1 lg:col-span-2">
-              <AllocationButtons />
+              <AllocationButtons
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+              />
             </div>
 
             <div className="col-span-1 lg:col-span-5  bg-white rounded-xl p-3 shadow">
@@ -961,10 +966,16 @@ const AllocationEngine = () => {
           </>
         ) : null} */}
         <div className="self-end mt-3">
-        <button onClick={navigateToReviewConstraints}  className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-2">
+          <button
+            onClick={navigateToReviewConstraints}
+            className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl mr-2"
+          >
             Review Constraints
           </button>
-          <button onClick={navigateToChangeControl} className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl">
+          <button
+            onClick={navigateToChangeControl}
+            className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl"
+          >
             Submit Changes
           </button>
           <button className="self-end bg-[#56478A] border-primary text-white pl-9 pr-9 pt-1 pb-1 rounded-3xl ml-2">

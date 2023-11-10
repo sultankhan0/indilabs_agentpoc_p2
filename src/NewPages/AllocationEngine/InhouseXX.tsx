@@ -61,6 +61,8 @@ const InhouseXX = () => {
   const [minAllocationData, setMinAllocationData] = useState<number>();
   const [resultArrayList, setResultArrayList] = useState<number[]>([]);
   const [selectedSegment, setSelectedSegment] = useState<string>("VHR");
+
+  const [activeButton, setActiveButton] = useState<string>("all");
   const cities = [
     { id: "pune", name: "PUN" },
     { id: "delhi", name: "DEL" },
@@ -380,7 +382,10 @@ const InhouseXX = () => {
           </div>
 
           <div className="w-[100%] flex gap-5 flex-wrap xl:flex-nowrap">
-            <AllocationButtons />
+            <AllocationButtons
+              activeButton={activeButton}
+              setActiveButton={setActiveButton}
+            />
             <SegVolumeBadTable
               showButtons={showButtons}
               setSelectedSegment={setSelectedSegment}

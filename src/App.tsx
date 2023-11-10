@@ -80,8 +80,6 @@ function App() {
           <Route path="/AllocationEngine" element={<AllocationEngine />} />
           <Route path="/InhouseXX" element={<InhouseXX />} />
 
-          <Route path="/AllocationButtons" element={<AllocationButtons />} />
-
           <Route path="/TestPipeline" element={<TestPipeLine />} />
           <Route path="/performance" element={<Performance />} />
 

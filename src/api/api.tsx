@@ -21,11 +21,17 @@ export const fetchDashboardData = async () => {
   }
 };
 
-export const GetCityData = async ({ city, bucket }: any) => {
+export const GetCityData = async ({
+  city,
+  bucket,
+  activeButton: activeProduct,
+}: any) => {
   try {
     const response = await axios.get(
-      `https://indilabs-json.vercel.app/strategy/default?city=${city}&bucket=${bucket}&product=home_loan`
-      
+      `https://indilabs-json.vercel.app/strategy/default?city=${city}&bucket=${bucket}&product=${
+        activeProduct === "all" ? "home_loan" : activeProduct
+      }`
+
       // `http://192.46.215.124:8000/default?city=bangalore&product=home_loan&bucket=b1`
       // `https://192.46.215.124:8000/default?city=kolkata&product=home_loan&bucket=b469`
       // `https://192.46.215.124:8000/default?city=kolkata&product=home_loan&bucket=b4`
