@@ -250,7 +250,7 @@ function SegmentTable(props: Props) {
               <p>Treatments</p>
               <select
                 defaultValue={segmentData}
-                className="w-[100px] pl-3 pr-1 border rounded bg-violet-300 flex items-center justify-center gap-2"
+                className="w-[100px] pl-3 pr-1 border rounded bg-[#DED6FF] flex items-center justify-center gap-2"
               >
                 <option value="VHR">VHR</option>
                 <option value="HR">HR</option>
@@ -386,7 +386,7 @@ function SegmentTable(props: Props) {
                   onClick={onClickShowTestIdComp}
                   type="button"
                   className={`w-[90%] p-1 border-2 rounded-md font-['calibri' !important] font-[400] text-gray-500 ${
-                    showTestIdCompo && "bg-violet-300 text-gray-800 font-[500]"
+                    showTestIdCompo && "bg-[#DED6FF] text-gray-800 font-[500]"
                   }`}
                 >
                   Add/Edit
@@ -396,7 +396,7 @@ function SegmentTable(props: Props) {
             <td>
               <div className="w-full flex justify-between">
                 {tableNumber?.map((each: any) => (
-                  <div className="flex-1 border-2 text-center font-['calibri' !1important] font-[500]">
+                  <div className="flex-1 border-2 text-center font-['calibri' !important] font-[500]">
                     {each}
                   </div>
                 ))}

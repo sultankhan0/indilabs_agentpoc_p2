@@ -72,7 +72,7 @@ function TestId(props: Props) {
         <button
           onClick={onClickCallSequence}
           className={`w-[140px] font-['calibri' !important] text-[#7f7f7f] border-2 border-gray-300 py-2 px-6  rounded-lg  ${
-            clickedCreateBtn && "bg-violet-300"
+            clickedCreateBtn && "bg-[#DED6FF]"
           }`}
         >
           Create

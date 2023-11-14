@@ -80,7 +80,7 @@ const ReviewPerformance: React.FC = () => {
               <p className="text-[22px]">Treatments</p>
               <button
                 type="button"
-                className="text-[21px] border bg-[#3D5EB8] mb-3 text-white pl-3 pr-3 rounded-md lg:mb-0"
+                className="text-[21px] border bg-[#4472C4] mb-3 text-white pl-3 pr-3 rounded-md lg:mb-0"
               >
                 {segmentValue}
               </button>

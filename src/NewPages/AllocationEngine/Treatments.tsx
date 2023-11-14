@@ -90,7 +90,7 @@ const Treatment = (props: Props) => {
                     <div className="flex items-center">
                       <div
                         className={`status_logo ${
-                          isActive ? "bg-[#00B050]" : "bg-orange-400"
+                          isActive ? "bg-[#00B050]" : "bg-[#FFC000]"
                         }  text-white w-3 h-3 rounded-full flex items-center justify-center`}
                       ></div>
                       <span className="ml-1 font-['calibri' !important] text-[#000000] font-[400]">
@@ -113,7 +113,7 @@ const Treatment = (props: Props) => {
         </div>
         <button
           type="button"
-          className="w-[90px] font-[500] rounded-md pt-1 pb-1 bg-violet-300 border text-[13px] font-['calibri' !important] self-end -mt-4"
+          className="w-[90px] font-[500] rounded-md pt-1 pb-1 bg-[#DED6FF] border text-[13px] font-['calibri' !important] self-end -mt-4"
           onClick={() => dispatch(addPerformance(props.performance))}
         >
           Update
