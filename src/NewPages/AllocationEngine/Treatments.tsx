@@ -10,7 +10,7 @@ const Treatment = (props: Props) => {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="min-w-[280px] flex flex-col overflow-x-auto">
+      <div className="min-w-[280px] flex flex-col overflow-x-auto -ml-3 lg:-ml-0">
         <div className="h-[385px] table_wrapper bg-white w-300 p-4 rounded-xl mb-5 overflow-x-auto ">
           <table className="w-300 table-auto  ">
             <thead>

@@ -38,7 +38,7 @@ const data = [
 
 export default function Performance() {
   return (
-    <div className="min-w-[280px] w-[100%] md:w-[47%] xl:w-[35%] bg-white rounded-xl border-2 overflow-x-auto">
+    <div className="min-w-[310px] w-[100%] md:w-[48%] xl:w-[34%] bg-white rounded-xl border-2 overflow-x-auto">
         <div className="flex items-center justify-between p-4">
         <h1 className="text-[20px] font-[400] font-['calibri' !important] ">Performance</h1>
         <div className="flex items-center gap-3">
