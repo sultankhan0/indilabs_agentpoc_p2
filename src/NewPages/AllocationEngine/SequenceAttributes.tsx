@@ -137,7 +137,7 @@ const SequenceAttributes: React.FC<{
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
             Action:
           </p>
-          {actionRadio?.map((radio, index) => {
+          {/* {actionRadio?.map((radio, index) => {
             return (
               <div className="action_radio" key={radio.id}>
                 <input
@@ -151,15 +151,15 @@ const SequenceAttributes: React.FC<{
                 <label htmlFor={radio.id}>{radio.label}</label>
               </div>
             );
-          })}
+          })} */}
 
-          {/* <div className="flex items-center gap-1">
+           <div className="flex items-center gap-1">
              <button type="button" className=" border-2 rounded-md text-black font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1">HOLD</button>
              <button type="button" className=" border-2 rounded-md bg-[#00B050]  text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">MESSAGE</button>
              <button type="button" className=" border-2 rounded-md bg-[#7030A0] text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">CALL</button>
              <button type="button" className=" border-2 rounded-md bg-[#ED7D31] text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">AGENCY</button>
              <button type="button" className=" border-2 rounded-md bg-[#FF0000] text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">LEGAL</button>
-          </div> */}
+          </div>
         </div>
         <div className="flex items-center gap-10">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">

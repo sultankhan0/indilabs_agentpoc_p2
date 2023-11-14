@@ -188,9 +188,10 @@ const InhouseXX = () => {
   useEffect(() => {
     fetchData(selectedCity, activeBucket);
   }, []);
-  const Loader = () => {
-    return <span className="loader"></span>;
-  };
+
+  // const Loader = () => {
+  //   return <span className="loader"></span>;
+  // };
 
   console.log("allocationData", allocationData);
 
@@ -211,7 +212,7 @@ const InhouseXX = () => {
   return (
     <div className="p-0 lg:p-[28px] responsivePageWrapper  relative">
       <DashboardHeader />
-      {loader ? <Loader /> : ""}
+      {/* {loader ? <Loader /> : ""} */}
       <div className="bg-gray-100 rounded-xl p-2 lg:p-[28px] mt-5 flex flex-col">
         <div className=" w-full justify-between flex upperSectionAllocation">
           <div className="flex ">
