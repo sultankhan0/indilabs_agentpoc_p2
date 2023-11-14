@@ -32,7 +32,7 @@ export const GetCityData = async ({
         activeProduct === "all" ? "home_loan" : activeProduct
       }`
 
-      // `http://192.46.215.124:8000/default?city=bangalore&product=home_loan&bucket=b1`
+      
       // `https://192.46.215.124:8000/default?city=kolkata&product=home_loan&bucket=b469`
       // `https://192.46.215.124:8000/default?city=kolkata&product=home_loan&bucket=b4`
     );
