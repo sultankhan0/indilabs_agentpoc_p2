@@ -127,7 +127,7 @@ const InhouseXX = () => {
   const fetchData = async (city: string, bucket: string) => {
     setLoader(true);
 
-    const res = await GetCityData({ city, bucket });
+    const res = await GetCityData({ city, bucket, activeButton });
 
     if (res.status === 200) {
       setAllocationData(res.data.allocations);
@@ -187,7 +187,7 @@ const InhouseXX = () => {
   };
   useEffect(() => {
     fetchData(selectedCity, activeBucket);
-  }, []);
+  }, [activeButton]);
 
   // const Loader = () => {
   //   return <span className="loader"></span>;
