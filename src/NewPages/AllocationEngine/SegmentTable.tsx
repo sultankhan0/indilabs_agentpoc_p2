@@ -236,7 +236,7 @@ function SegmentTable(props: Props) {
     //     </tbody>
     //   </table>
     // </div>
-    <div className="min-w-[280px] w-[95%] bg-white rounded lg:ml-6 overflow-x-auto">
+    <div className="min-w-[300px] w-[97%] bg-white rounded lg:ml-6 overflow-x-auto">
       <table className="w-[100%] border" cellPadding={10}>
         <thead>
           <tr>

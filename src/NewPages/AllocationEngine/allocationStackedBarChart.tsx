@@ -269,8 +269,8 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           </button>
         </div>
       </div>
-      <div className="w-[100%] flex items-start justify-start">
-        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[30%] mt-10">
+      <div className="w-[100%] flex flex-col sm:flex-row items-start justify-start">
+        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-10">
            <tbody>
             <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Champion</td>
@@ -286,7 +286,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
             </tr>
            </tbody>
         </table>}
-        <div className={`-ml-4 ${props.selectedSegment==='MR'? 'w-[70%]':"w-[100%]"} `}>
+        <div className={`-ml-0 ${props.selectedSegment==='MR'? 'w-[100%] sm:w-[70%] -ml-4':"w-[100%]"} `}>
       <ReactApexChart
         options={state.options as any}
         series={state.series[props.selectedSegment]}

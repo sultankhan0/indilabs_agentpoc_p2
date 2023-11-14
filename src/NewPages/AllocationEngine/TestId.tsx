@@ -17,7 +17,7 @@ function TestId(props: Props) {
   };
 
   return (
-    <div className="min-w-[300px] p-4 flex flex-row space-x-4 border-2 bg-white border-gray-300 rounded-lg flex-wrap">
+    <div className="min-w-[300px] p-4 flex flex-row gap-5 border-2 bg-white border-gray-300 rounded-lg flex-wrap -ml-3 lg:ml-3">
       <div className="mb-1 flex flex-row items-center space-x-2">
         <label
           htmlFor="testId"

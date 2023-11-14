@@ -55,7 +55,7 @@ const ReviewPerformance: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
+    <div className="m-0 flex flex-col gap-5 bg-gray-100 pl-2 pt-5 md:m-4 rounded-xl">
       <div className="w-[95%] flex items-center gap-2 justify-between ml-6 flex-wrap">
         <div className=" flex gap-5 flex-wrap">
           <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">
@@ -120,7 +120,7 @@ const ReviewPerformance: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col ml-2 mr-2">
         <SegmentTable
           showTestIdComponent={showTestIdComponent}
           showTestIdCompo={showTestIdComp}
@@ -154,7 +154,7 @@ const ReviewPerformance: React.FC = () => {
         </div> */}
       </div>
       {!showTestIdComp && (
-        <div className=" flex -ml-2 gap-2 xl:ml-4 flex-wrap">
+        <div className=" mr-3 flex ml-2 gap-2 xl:ml-4 md:mr-0 flex-wrap">
           <TestPipeLine />
           <Performance />
           <PLImpactChart />

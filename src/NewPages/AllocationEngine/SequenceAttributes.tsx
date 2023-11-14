@@ -59,23 +59,23 @@ const SequenceAttributes: React.FC<{
 
   useEffect(() => {}, [selectedAction]);
   return (
-    <div className="min-w-[280px] flex flex-col overflow-x-auto">
+    <div className="min-w-[280px] flex flex-col overflow-x-auto -ml-3 lg:-ml-0">
       <div
         id="chart"
-        className=" flex flex-col bg-white border-2 p-3 rounded-xl gap-3"
+        className=" flex flex-col bg-white border-2 p-3 rounded-xl gap-3 overflow-x-auto"
       >
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] text-[#000000] font-[400]">
             Sequence
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 flex-wrap -mt-12 sm:-mt-0">
             <input
               type="text"
               className="w-[70px] border rounded-md text-[#7f7f7f] font-['calibri' !important] border-[#7f7f7f]  pt-1 pb-1 text-center"
               placeholder="01"
             />
             <div className="flex items-center gap-2">
-              <p className="text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
+              <p className="text-[19px] font-['calibri' !important] font-[400] text-[#000000] mt-5 lg:mt-0 ">
                 Start Pos.
               </p>
               <input
@@ -85,7 +85,7 @@ const SequenceAttributes: React.FC<{
               />
             </div>
             <div className="flex items-center gap-2">
-              <p className="text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
+              <p className="text-[19px] font-['calibri' !important] font-[400] text-[#000000] mt-5 lg:mt-0 ">
                 End Pos.
               </p>
               <input
@@ -96,11 +96,11 @@ const SequenceAttributes: React.FC<{
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
             Attributes:
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap -mt-12 sm:-mt-0">
             <button
               type="button"
               className=" border-2 rounded-md text-black font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1"
@@ -133,7 +133,7 @@ const SequenceAttributes: React.FC<{
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
             Action:
           </p>
@@ -153,7 +153,7 @@ const SequenceAttributes: React.FC<{
             );
           })} */}
 
-           <div className="flex items-center gap-1">
+           <div className="flex items-center gap-1 flex-wrap -mt-12 sm:-mt-0">
              <button type="button" className=" border-2 rounded-md text-black font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1">HOLD</button>
              <button type="button" className=" border-2 rounded-md bg-[#00B050]  text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">MESSAGE</button>
              <button type="button" className=" border-2 rounded-md bg-[#7030A0] text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">CALL</button>
@@ -161,11 +161,11 @@ const SequenceAttributes: React.FC<{
              <button type="button" className=" border-2 rounded-md bg-[#FF0000] text-white font-['calibri' !important] font-[400] pl-4 pr-4  pt-1 pb-1">LEGAL</button>
           </div>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
-            Intensity::
+            Intensity:
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap -mt-2 sm:-mt-0">
             <button
               type="button"
               className=" border-2 rounded-md text-black font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1"
@@ -186,11 +186,11 @@ const SequenceAttributes: React.FC<{
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
             Tone:
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap -mt-12 sm:-mt-0">
             <button
               type="button"
               className=" border-2 rounded-md text-black font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1"
@@ -217,11 +217,11 @@ const SequenceAttributes: React.FC<{
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <p className="w-[70px] text-[19px] font-['calibri' !important] font-[400] text-[#000000] ">
             Offer:
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap -mt-12 sm:-mt-0">
             <button
               type="button"
               className=" border-2 bg-[#A090D5] rounded-md text-white font-['calibri' !important] font-[400] pl-4 pr-4 pt-1 pb-1"
