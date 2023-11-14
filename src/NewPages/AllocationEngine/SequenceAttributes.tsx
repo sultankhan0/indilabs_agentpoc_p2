@@ -281,7 +281,7 @@ const SequenceAttributes: React.FC<{
       </div>
       <button
         type="button"
-        className="w-[90px] rounded-md font-[500] pt-1 pb-1 bg-[#D4D6FF] border text-[13px] font-['calibri' !important] self-end mt-1"
+        className="w-[90px] rounded-md font-[500] pt-1 pb-1 bg-[#DED6FF] border text-[13px] font-['calibri' !important] self-end mt-1"
         onClick={() => props.setPerformance(data)}
       >
         Apply
