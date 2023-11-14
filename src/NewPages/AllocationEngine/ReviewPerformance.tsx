@@ -9,22 +9,24 @@ import TestId from "./TestId";
 import Treatment from "./Treatments";
 import SequenceAttributes from "./SequenceAttributes";
 
-
-
-const getSegmentFromLocalStorage = () =>{
-  const segValue = localStorage.getItem('segment')
-  if (segValue === undefined || segValue === null){
-    return 'VHR'
-}else {
-  return JSON.parse(segValue)
-}
-}
+const getSegmentFromLocalStorage = () => {
+  const segValue = localStorage.getItem("segment");
+  if (segValue === undefined || segValue === null) {
+    return "VHR";
+  } else {
+    return JSON.parse(segValue);
+  }
+};
 
 const ReviewPerformance: React.FC = () => {
   const [activeBucket, setActiveBucket] = useState("b1");
   const [showTestIdComp, setShowTestIdComp] = useState(false);
   const [showSequenceCond, setShowSequenceCond] = useState(false);
-  const [segmentValue,setSegmentValue] = useState(getSegmentFromLocalStorage())
+  const [segmentValue, setSegmentValue] = useState(
+    getSegmentFromLocalStorage()
+  );
+  const [treatment, setTreatment] = useState<any>(null);
+  const [performance, setPerformance] = useState<any>(null);
 
   const BGroups = [
     { id: "b1", label: "B1" },
@@ -48,35 +50,42 @@ const ReviewPerformance: React.FC = () => {
     setActiveBucket(buttonId);
   };
 
-  const showTestIdComponent = () =>{
-    setShowTestIdComp(true)
-  }
-
-  
+  const showTestIdComponent = () => {
+    setShowTestIdComp(true);
+  };
 
   return (
     <div className="flex flex-col gap-5 bg-gray-100 pl-2 pt-5 m-4 rounded-xl">
       <div className="w-[95%] flex items-center gap-2 justify-between ml-6 flex-wrap">
         <div className=" flex gap-5 flex-wrap">
-        <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">
-          {BGroups.map((button, index) => (
-            <div
-              key={button.id}
-              onClick={() => handleButtonClick(button.id)}
-              className={`text-center text-[18px] font-medium font-['Calibri' !important] h-10 w-[78px] border border-gray-400 flex align-center justify-center items-center cursor-pointer ${
-                activeBucket === button.id ? " bg-violet-200 " : "bg-[#fafafb]"
-              } ${index === 0 ? "rounded-l-md" : ""} ${
-                index === BGroups.length - 1 ? "rounded-r-md" : ""
-              }`}
-            >
-              {button.label}
+          <div className="min-w-[310px] flex justify-start  rounded-xl B1TabsContain overflow-x-auto flex-wrap">
+            {BGroups.map((button, index) => (
+              <div
+                key={button.id}
+                onClick={() => handleButtonClick(button.id)}
+                className={`text-center text-[18px] font-medium font-['Calibri' !important] h-10 w-[78px] border border-gray-400 flex align-center justify-center items-center cursor-pointer ${
+                  activeBucket === button.id
+                    ? " bg-violet-200 "
+                    : "bg-[#fafafb]"
+                } ${index === 0 ? "rounded-l-md" : ""} ${
+                  index === BGroups.length - 1 ? "rounded-r-md" : ""
+                }`}
+              >
+                {button.label}
+              </div>
+            ))}
+          </div>
+          {showTestIdComp && (
+            <div className=" flex items-center gap-3">
+              <p className="text-[22px]">Treatments</p>
+              <button
+                type="button"
+                className="text-[21px] border bg-[#3D5EB8] mb-3 text-white pl-3 pr-3 rounded-md lg:mb-0"
+              >
+                {segmentValue}
+              </button>
             </div>
-          ))}
-        </div>
-        {showTestIdComp && <div className=" flex items-center gap-3">
-          <p className="text-[22px]">Treatments</p>
-          <button type="button" className="text-[21px] border bg-[#3D5EB8] mb-3 text-white pl-3 pr-3 rounded-md lg:mb-0">{segmentValue}</button>
-        </div>}
+          )}
         </div>
         <div className="flex items-center gap-1 flex-wrap">
           <button
@@ -112,7 +121,11 @@ const ReviewPerformance: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <SegmentTable showTestIdComponent={showTestIdComponent} showTestIdCompo={showTestIdComp} segmentData ={segmentValue} />
+        <SegmentTable
+          showTestIdComponent={showTestIdComponent}
+          showTestIdCompo={showTestIdComp}
+          segmentData={segmentValue}
+        />
         {/* <div className="w-[95%] flex items-center ml-6">
           <div className="w-[20%] flex items-center gap-1 border-2 ">
             <HiPlus className="text-violet-800" size={35} />
@@ -150,10 +163,15 @@ const ReviewPerformance: React.FC = () => {
       {showTestIdComp && (
         <div className="flex gap-6 ml-5 flex-wrap">
           <div className="flex flex-col gap-2">
-            <TestId showSequence={showSequence} />
-            {showSequenceCond && <SequenceAttributes />}
+            <TestId showSequence={showSequence} setTreatment={setTreatment} />
+            {showSequenceCond && (
+              <SequenceAttributes
+                treatment={treatment}
+                setPerformance={setPerformance}
+              />
+            )}
           </div>
-          <Treatment />
+          <Treatment performance={performance} />
         </div>
       )}
     </div>

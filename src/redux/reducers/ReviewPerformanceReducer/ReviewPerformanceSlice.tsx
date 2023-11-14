@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-const initialState = {
+const initialState: any = {
   performanceData: [],
   loading: true,
   error: {},
@@ -20,7 +20,11 @@ export const getPerformanceData = createAsyncThunk("/performance", async () => {
 const ReviewPerformanceSlice = createSlice({
   name: "reviewPerformance",
   initialState,
-  reducers: {},
+  reducers: {
+    addPerformance: (state, { payload }: any) => {
+      state.performanceData = [...state.performanceData, payload];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getPerformanceData.pending, (state) => {
       state.loading = true;
@@ -37,5 +41,7 @@ const ReviewPerformanceSlice = createSlice({
     });
   },
 });
+
+export const { addPerformance } = ReviewPerformanceSlice.actions;
 
 export default ReviewPerformanceSlice.reducer;

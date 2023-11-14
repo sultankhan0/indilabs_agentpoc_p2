@@ -84,10 +84,7 @@ function App() {
           <Route path="/performance" element={<Performance />} />
 
           <Route path="/PLImpactChart" element={<PLImpactChart />} />
-          <Route path="/treatments" element={<Treatment />} />
-          <Route path="/testid" element={<TestId />} />
           <Route path="/segmenttable" element={<SegmentTable />} />
-          <Route path="/SequenceAttributes" element={<SequenceAttributes />} />
           {/* <Route path="/SingleStackedBarChart" element={<SingleStackedBarChart/>} /> */}
 
           <Route path="/home" element={<HomePage />} />
