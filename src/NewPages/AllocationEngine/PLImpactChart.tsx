@@ -2,12 +2,9 @@ import React from "react";
 import {
   BarChart,
   Bar,
-  XAxis,
-  YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
-  ReferenceLine
+  YAxis,
+  ReferenceLine,
 } from "recharts";
 
 const data = [
@@ -25,7 +22,7 @@ const data = [
   },
 ];
 
-const CustomBar = (props:any) => {
+const CustomBar = (props: any) => {
   const { x, y, width, height, fill, color } = props;
 
   const cornerRadius = color === "#00B050" && "#FF0000" ? 15 : 0;
@@ -40,8 +37,7 @@ const CustomBar = (props:any) => {
   return <path d={path} fill={fill} />;
 };
 
-const PLImpactChart: React.FC = () =>{ 
-
+const PLImpactChart: React.FC = () => { 
   const chartStyles: React.CSSProperties = {
     width: "350px",
     height: "300px",
@@ -58,40 +54,34 @@ const PLImpactChart: React.FC = () =>{
     pointerEvents: "none",
   };
 
-
-return(
- <div className="min-w-[310px] w-[100%] md:w-[48%] md:ml-2 xl:w-[27%] 2xl:w-[29%] xl:ml-0 flex flex-col items-start gap-10 p-2 bg-white border-2 rounded-xl overflow-x-auto">
-    <h1 className="ml-5 text-[19px] font-['calibri' !important] text-[#000000] font-[400]">P&L Impact (Incremental)</h1>
-    <div style={chartStyles}>
-
-  <BarChart
-    width={350}
-    height={300}
-    data={data}
-    stackOffset="sign"
-    margin={{
-      top: 5,
-      right: 30,
-      left: 20,
-      bottom: 5
-    }}
-    
-  >
-     <Bar dataKey="pv" fill="#00B050" stackId="stack" shape={<CustomBar color="#00B050" />} />
-    <Bar dataKey="uv" fill="#FF0000" stackId="stack" radius={[10, 10, 0, 0]}  />
-    <CartesianGrid strokeDasharray="1 1" vertical={false} horizontal={false} />
-    {/* <XAxis dataKey="name" /> */}
-    <YAxis ticks={[0]} />
-    <Tooltip />
-    {/* <Legend /> */}
-    <ReferenceLine y={0} stroke="#000" />
-
-    {/* <Bar dataKey="uv" fill="#FF0000" stackId="stack" shape={<CustomBar color="#FF0000" />}  /> */}
-  </BarChart>
-  <div style={gridStyles}></div>
-  </div>
-  </div>
-)
+  return (
+    <div className="min-w-[310px] w-[100%] md:w-[48%] md:ml-2 xl:w-[27%] 2xl:w-[29%] xl:ml-0 flex flex-col items-start gap-10 p-2 bg-white border-2 rounded-xl overflow-x-auto">
+      <h1 className="ml-5 text-[19px] font-['calibri' !important] text-[#000000] font-[400]">P&L Impact (Incremental)</h1>
+      <div style={chartStyles}>
+        <BarChart
+          width={350}
+          height={300}
+          data={data}
+          stackOffset="sign"
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}
+        >
+          <Bar dataKey="pv" fill="#00B050" stackId="stack" shape={<CustomBar color="#00B050" />} />
+          <Bar dataKey="uv" fill="#FF0000" stackId="stack" radius={[10, 10, 0, 0]}  />
+          <CartesianGrid strokeDasharray="1 1" vertical={false} horizontal={false} />
+          <YAxis ticks={[0]} />
+          {/* Remove the Tooltip component */}
+          {/* <Tooltip /> */}
+          <ReferenceLine y={0} stroke="#000" />
+        </BarChart>
+        <div style={gridStyles}></div>
+      </div>
+    </div>
+  );
 };
 
 export default PLImpactChart;
