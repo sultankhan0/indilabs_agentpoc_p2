@@ -178,14 +178,15 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       plotOptions: {
         bar: {
           horizontal: true,
+          barHeight: '55%',
           // distributed: true,
-          dataLabels: {
-            enabled: true, // Disable data labels on bars
-            style:{
-              colors: ['#000000'],
-              fontSize: "30px",
-            }
-          },
+          // dataLabels: {
+          //   enabled: true, // Disable data labels on bars
+          //   style:{
+          //     colors: ['#000000'],
+          //     fontSize: "30px",
+          //   }
+          // },
         },
       },
       dataLabels: {
@@ -287,28 +288,28 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className="w-[100%] flex flex-col sm:flex-row items-start justify-start">
-        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-10">
+        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-9">
            <tbody>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[54px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Champion</td>
               <td>80%</td>
             </tr>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[66px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Challenger 1</td>
               <td>10%</td>
             </tr>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[68px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Challenger 2</td>
               <td>10%</td>
             </tr>
            </tbody>
         </table>}
-        <div className={`-ml-0 ${props.selectedSegment==='MR'? 'w-[100%] sm:w-[70%] -ml-4':"w-[100%]"} `}>
+        <div className={`-ml-0 -mt-3 ${props.selectedSegment==='MR'? 'w-[100%] sm:w-[70%] -ml-4':"w-[100%]"} `}>
       <ReactApexChart
         options={state.options as any}
         series={state.series[props.selectedSegment]}
         type="bar"
-        height={365}
+        height={401}
         
       />
       </div>
