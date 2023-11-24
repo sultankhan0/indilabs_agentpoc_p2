@@ -26,7 +26,7 @@ const AllocationButtons: React.FC<{
           className={`w-[130px] font-medium text-[21px] text-[#7f7f7f] font-['calibri' !important] border-2 border-[#BFBFBF] rounded-md pt-3 pb-3 cursor-pointer ${
             props.activeButton === button.id
               ? " bg-[#DED6FF] text-[#404040] "
-              : "bg-transparent"
+              : "bg-white"
           }`}
         >
           {button.label}

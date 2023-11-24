@@ -12,27 +12,27 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       VHR: [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 40, 0],
+          data: [0, 0, 0, 6, 0],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 41, 37, 10],
+          data: [0, 0, 8, 14, 4],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [23, 32, 33, 32, 13],
+          data: [7, 13, 12, 10, 11],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [30, 17, 11, 0, 15],
+          data: [15, 14, 7, 0, 10],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 0, 6],
+          data: [8, 3, 3, 0, 5],
           color: "#FF0000",
         },
         
@@ -72,22 +72,22 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Marine Sprite",
-          data: [44, 55, 0, 0, 0],
+          data: [8, 12, 0, 0, 0],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [53, 32, 33, 0, 0],
+          data: [11, 7, 19, 0, 0],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [12, 17, 11, 0, 0],
+          data: [8, 8, 8, 0, 0],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 0, 0],
+          data: [3, 3, 3, 0, 0],
           color: "#FF0000",
         },
       ],
@@ -173,21 +173,26 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         type: "bar",
         height: 350,
         stacked: true,
-        stackType: "100%",
+        stackType: "90%",
       },
       plotOptions: {
         bar: {
           horizontal: true,
+          barHeight: '55%',
           // distributed: true,
-          dataLabels: {
-            enabled: true, // Disable data labels on bars
-            style:{
-              colors: ['#000000'],
-              fontSize: "30px",
-            }
-          },
+          // dataLabels: {
+          //   enabled: true, // Disable data labels on bars
+          //   style:{
+          //     colors: ['#000000'],
+          //     fontSize: "30px",
+          //   }
+          // },
         },
       },
+      dataLabels: {
+        enabled: false
+      },
+
       stroke: {
         width: 1,
         colors: ["#7f7f7f"],
@@ -196,7 +201,14 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         text: "",
       },
       xaxis: {
-        categories: ["", "", "", "", ""],
+        type: 'numeric',
+        categories: [0, 5, 10, 15, 20, 25],
+        labels: {
+          formatter: (val: number) => (Math.round(val).toString()),
+        },
+        tickAmount: 6, // Adjust the number of ticks as needed
+        min: 0, // Set the minimum value
+        max: 30, // Set the maximum value
       },
       tooltip: {
         y: {
@@ -204,6 +216,12 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
             return val + "K";
           },
         },
+      },
+      yaxis: {
+        show: false,
+        formatter: (val: number) => {
+          return val + 5;
+        }, // Hide the vertical axis
       },
       fill: {
         opacity: 1,
@@ -270,28 +288,28 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className="w-[100%] flex flex-col sm:flex-row items-start justify-start">
-        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-10">
+        {props.selectedSegment === 'MR' && <table cellPadding={13} className="w-[90%] sm:w-[30%] mt-9">
            <tbody>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[54px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Champion</td>
               <td>80%</td>
             </tr>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[66px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Challenger 1</td>
               <td>10%</td>
             </tr>
-            <tr className="border-b-2 font-['calibri' !important] font-[400] text-[18px]">
+            <tr className="h-[68px] border-b-2 font-['calibri' !important] font-[400] text-[18px]">
               <td>Challenger 2</td>
               <td>10%</td>
             </tr>
            </tbody>
         </table>}
-        <div className={`-ml-0 ${props.selectedSegment==='MR'? 'w-[100%] sm:w-[70%] -ml-4':"w-[100%]"} `}>
+        <div className={`-ml-0 -mt-3 ${props.selectedSegment==='MR'? 'w-[100%] sm:w-[70%] -ml-4':"w-[100%]"} `}>
       <ReactApexChart
         options={state.options as any}
         series={state.series[props.selectedSegment]}
         type="bar"
-        height={350}
+        height={401}
         
       />
       </div>
