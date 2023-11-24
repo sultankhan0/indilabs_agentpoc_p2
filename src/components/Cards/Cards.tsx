@@ -516,7 +516,7 @@ const Cards = (props: Props) => {
               <div className="flex-col justify-start items-center gap-1 flex">
                 <div className="px-8 py-1 bg-white rounded  border-slate-400 justify-center items-center gap-1 inline-flex">
                   <div className="text-[#000] text-base text-[16px] font-[400]  font-['DM Sans'] leading-normal">
-                    Allocations
+                    Sale
                   </div>
                 </div>
                 <div>
@@ -524,10 +524,10 @@ const Cards = (props: Props) => {
                     className="text-[12px] font-[500]  leading-[18px]"
                     style={{ color: "#5C4E8E" }}
                   >
-                    Accounts
+                    Accounts marked for
                   </span>
                   <span className="text-[#ED0E00] text-[12px] font-[700] leading-[18px] ml-1">
-                    to be Allocated
+                  Debt Sale
                   </span>
                 </div>
               </div>

@@ -399,18 +399,15 @@ const InhouseXX = () => {
           <div className="self-end mt-3 flex justify-center gap-2 flex-wrap">
             <button
               onClick={navigateToReviewPerformance}
-              className={`self-end  border-2 border-[#BFBFBF] font-['calibri' !important] text-[19px]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md mr-3 ${
-                reviewBtn && "bg-[#DED6FF]"
-              }`}
-            >
+              className="bg-primary py-2.5 px-9 border border-primary rounded-3xl text-white" style={{ background: "#6750A4" }}>
+              
+            
               Review Performance
             </button>
             <button
               onClick={navigateToOptimizeStrategy}
-              className={`self-end border-2 font-['calibri' !important] text-[19px] border-[#BFBFBF]  text-[#7f7f7f] pl-9 pr-9 pt-1 pb-1 rounded-md ${
-                optimizeBtn && "bg-[#DED6FF]"
-              }`}
-            >
+              className="bg-primary py-2.5 px-9 border border-primary rounded-3xl text-white" style={{ background: "#6750A4" }}>
+            
               Optimize Strategy
             </button>
           </div>
