@@ -12,27 +12,27 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
       VHR: [
         {
           name: "Bucket Slope",
-          data: [0, 0, 0, 40, 0],
+          data: [0, 0, 0, 6, 0],
           color: "#ffffff",
         },
         {
           name: "Marine Sprite",
-          data: [0, 0, 41, 37, 10],
+          data: [0, 0, 8, 14, 4],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [23, 32, 33, 32, 13],
+          data: [7, 13, 12, 10, 11],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [30, 17, 11, 0, 15],
+          data: [15, 14, 7, 0, 10],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 0, 6],
+          data: [8, 3, 3, 0, 5],
           color: "#FF0000",
         },
         
@@ -72,22 +72,22 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         },
         {
           name: "Marine Sprite",
-          data: [44, 55, 0, 0, 0],
+          data: [8, 12, 0, 0, 0],
           color: "#00B050",
         },
         {
           name: "Striking Calf",
-          data: [53, 32, 33, 0, 0],
+          data: [11, 7, 19, 0, 0],
           color: "#7030A0",
         },
         {
           name: "Tank Picture",
-          data: [12, 17, 11, 0, 0],
+          data: [8, 8, 8, 0, 0],
           color: "#ED7D31",
         },
         {
           name: "Bucket Slope",
-          data: [9, 7, 5, 0, 0],
+          data: [3, 3, 3, 0, 0],
           color: "#FF0000",
         },
       ],
@@ -173,7 +173,7 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         type: "bar",
         height: 350,
         stacked: true,
-        stackType: "100%",
+        stackType: "90%",
       },
       plotOptions: {
         bar: {
@@ -188,6 +188,10 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
           },
         },
       },
+      dataLabels: {
+        enabled: false
+      },
+
       stroke: {
         width: 1,
         colors: ["#7f7f7f"],
@@ -196,7 +200,14 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
         text: "",
       },
       xaxis: {
-        categories: ["", "", "", "", ""],
+        type: 'numeric',
+        categories: [0, 5, 10, 15, 20, 25],
+        labels: {
+          formatter: (val: number) => (Math.round(val).toString()),
+        },
+        tickAmount: 6, // Adjust the number of ticks as needed
+        min: 0, // Set the minimum value
+        max: 30, // Set the maximum value
       },
       tooltip: {
         y: {
@@ -204,6 +215,12 @@ const AllocationStackedBarChart: React.FC<Props> = (props) => {
             return val + "K";
           },
         },
+      },
+      yaxis: {
+        show: false,
+        formatter: (val: number) => {
+          return val + 5;
+        }, // Hide the vertical axis
       },
       fill: {
         opacity: 1,
